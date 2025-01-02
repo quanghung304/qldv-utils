@@ -13,6 +13,7 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+//dung chung cho giao tiep giua api va database
 public class DefaultListResponse<T> {
     private Boolean success;
     private String message;

@@ -10,17 +10,17 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @Entity
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Table(
-        name = "QLDV_HT_NSD"
-)
+@Table(name = "QLDV_HT_NSD")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    String MASO;
+    @Column(name = "MASO")
+    String maSo;
     @Column(name = "MASO_TCD")
     String maSoTCD;
-    String TEN;
-    String QUYEN;
+    @Column(name = "TEN")
+    String ten;
+    @Column(name = "QUYEN")
+    String quyen;
     @Column(name = "CHUC_VU")
     String chucVu;
     @Column(name = "MAT_KHAU")
@@ -29,8 +29,10 @@ public class User {
     String ngayMatKhau;
     @Column(name = "MASO_THAM_CHIEU")
     String maSoThamChieu;
-    String TEL;
-    String EMAIL;
+    @Column(name = "TEL")
+    String tel;
+    @Column(name = "EMAIL")
+    String email;
     @Column(name = "TRANG_THAI")
     String trangThai;
 }
