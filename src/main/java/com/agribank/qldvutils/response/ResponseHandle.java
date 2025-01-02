@@ -7,7 +7,13 @@ public class ResponseHandle {
 
     public static <T extends DefaultResponse> ResponseEntity<T> success(T response) {
         response.setCheck(true);
-        response.setMessage("Request was successful");
+        response.setMessage("success");
+        return ResponseEntity.ok(response);
+    }
+
+    public static <T extends DefaultResponse> ResponseEntity<T> success(T response, String message) {
+        response.setCheck(true);
+        response.setMessage(message);
         return ResponseEntity.ok(response);
     }
 
