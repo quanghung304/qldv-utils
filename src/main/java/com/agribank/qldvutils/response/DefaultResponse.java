@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+//dung cho response cua api
 public class DefaultResponse {
     private Boolean check = true;
     private String message;
