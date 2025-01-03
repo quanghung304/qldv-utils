@@ -19,13 +19,13 @@ public class Tcd01Response {
     @JsonProperty("cap_TREN")
     String capTren;
     @JsonProperty("ngay_TL")
-    String ngayTl;
+    Date ngayTl;
     @JsonProperty("so_TL")
     String soTl;
     @JsonProperty("cap_TL")
     String capTl;
     @JsonProperty("ngay_GT")
-    String ngayGt;
+    Date ngayGt;
     @JsonProperty("so_GT")
     String soGt;
     @JsonProperty("cap_GT")
@@ -35,7 +35,7 @@ public class Tcd01Response {
     @JsonProperty("so_QD")
     String soQd;
     @JsonProperty("ngay_QD")
-    String ngayQd;
+    Date ngayQd;
     @JsonProperty("trang_THAI")
     String trangThai;
 }

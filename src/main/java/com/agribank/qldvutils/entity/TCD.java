@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
+import java.util.Date;
+
 @Data
 @Builder
 @NoArgsConstructor
@@ -22,13 +24,13 @@ public class TCD {
     @Column(name = "CAP_TREN")
     String capTren;
     @Column(name = "NGAY_TL")
-    String ngayThanhLap;
+    Date ngayThanhLap;
     @Column(name = "SO_TL")
     String soThanhLap;
     @Column(name = "CAP_TL")
     String capThanhLap;
     @Column(name = "NGAY_GT")
-    String ngayGiaiThe;
+    Date ngayGiaiThe;
     @Column(name = "SO_GT")
     String soGiaiThe;
     @Column(name = "CAP_GT")
@@ -38,7 +40,7 @@ public class TCD {
     @Column(name = "SO_QD")
     String soUyQuyen;
     @Column(name = "NGAY_QD")
-    String ngayUyQuyen;
+    Date ngayUyQuyen;
     @Column(name = "TRANG_THAI")
     String trangThai;
 }
