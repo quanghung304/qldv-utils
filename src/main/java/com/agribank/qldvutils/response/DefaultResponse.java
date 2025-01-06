@@ -11,6 +11,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 //dung cho response cua api
 public class DefaultResponse {
-    private Boolean check = true;
+    private Boolean check;
     private String message;
 }
