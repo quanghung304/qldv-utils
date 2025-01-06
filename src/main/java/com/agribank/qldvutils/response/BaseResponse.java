@@ -18,6 +18,14 @@ public class BaseResponse<T> {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
+    public static <T> ResponseEntity<BaseResponse<T>> success(String message, T data) {
+        BaseResponse<T> response = new BaseResponse<T>();
+        response.success = true;
+        response.message = message;
+        response.data = data;
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
     public static <T> ResponseEntity<BaseResponse<T>> error(String message) {
         BaseResponse<T> response = new BaseResponse<T>();
         response.success = false;
