@@ -16,7 +16,7 @@ import java.nio.file.AccessDeniedException;
 import java.util.HashMap;
 import java.util.Map;
 
-@ControllerAdvice
+//@ControllerAdvice
 @Slf4j
 public class ExceptionHandle {
 
