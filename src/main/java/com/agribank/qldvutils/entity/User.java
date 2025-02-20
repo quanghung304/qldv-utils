@@ -15,6 +15,7 @@ import java.sql.Date;
 @Table(name = "QLDV_HT_NSD")
 public class User {
     @Id
+    @Column(name = "MASO")
     String maSo;
     @Column(name = "MASO_TCD")
     String maSoTCD;
