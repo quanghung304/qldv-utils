@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
+import java.sql.Date;
+
 @Data
 @Builder
 @NoArgsConstructor
@@ -13,13 +15,10 @@ import lombok.experimental.FieldDefaults;
 @Table(name = "QLDV_HT_NSD")
 public class User {
     @Id
-    @Column(name = "MASO")
     String maSo;
     @Column(name = "MASO_TCD")
     String maSoTCD;
-    @Column(name = "TEN")
     String ten;
-    @Column(name = "QUYEN")
     String quyen;
     @Column(name = "CHUC_VU")
     String chucVu;
@@ -29,10 +28,23 @@ public class User {
     String ngayMatKhau;
     @Column(name = "MASO_THAM_CHIEU")
     String maSoThamChieu;
-    @Column(name = "TEL")
     String tel;
-    @Column(name = "EMAIL")
     String email;
     @Column(name = "TRANG_THAI")
     String trangThai;
+    @Column(name = "NGAY_TAO")
+    Date ngayTao;
+    @Column(name = "NGAY_SUA")
+    Date ngaySua;
+
+    @PrePersist
+    private void onCreate() {
+        ngayTao = new Date(System.currentTimeMillis());
+        ngaySua = new Date(System.currentTimeMillis());
+    }
+
+    @PreUpdate
+    private void onUpdate() {
+        ngaySua = new Date(System.currentTimeMillis());
+    }
 }
