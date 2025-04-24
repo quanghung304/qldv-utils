@@ -4,48 +4,38 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
-import java.sql.Date;
-
+@EqualsAndHashCode(callSuper = true)
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Table(name = "QLDV_HT_NSD")
-public class User {
-    @Id
-    @Column(name = "MASO")
-    String maSo;
-    @Column(name = "MASO_TCD")
-    String maSoTCD;
-    String ten;
-    String quyen;
-    @Column(name = "CHUC_VU")
-    String chucVu;
-    @Column(name = "MAT_KHAU")
-    String matKhau;
-    @Column(name = "NGAY_MAT_KHAU")
-    String ngayMatKhau;
-    @Column(name = "MASO_THAM_CHIEU")
-    String maSoThamChieu;
-    String tel;
+@Table(name = "QLDV_USER")
+public class User extends BaseEntity<String> {
+    @Column(name = "dv_code")
+    String dvCode;
+    @Column(name = "id_iam")
+    Integer idIam;
+    @Column(name = "role_id")
+    Integer roleId;
+    String username;
+    @Column(name = "full_name")
+    String fullName;
     String email;
-    @Column(name = "TRANG_THAI")
-    String trangThai;
-    @Column(name = "NGAY_TAO")
-    Date ngayTao;
-    @Column(name = "NGAY_SUA")
-    Date ngaySua;
+    Integer brcd;
+    @Column(name = "dep_id")
+    Integer depId;
+    String phone;
+    Integer vneid;
 
-    @PrePersist
-    private void onCreate() {
-        ngayTao = new Date(System.currentTimeMillis());
-        ngaySua = new Date(System.currentTimeMillis());
+    @Override
+    protected void onCreate() {
+        super.onCreate();
     }
 
-    @PreUpdate
-    private void onUpdate() {
-        ngaySua = new Date(System.currentTimeMillis());
+    @Override
+    protected void onUpdate() {
+        super.onUpdate();
     }
 }
