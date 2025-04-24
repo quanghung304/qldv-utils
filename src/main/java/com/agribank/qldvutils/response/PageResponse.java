@@ -8,7 +8,7 @@ import java.util.List;
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class PageResponse<T>{
-    Integer total;
+    Integer totalPages;
     Integer currentPage;
     Long totalItems;
     List<T> data;
