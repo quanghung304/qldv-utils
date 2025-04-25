@@ -14,6 +14,7 @@ public class PagingRequest {
     private Integer page;
     private Integer pageSize;
     private String sort = "ASC";
+    private String orderBy;
 
     public void validate(){
         if (Objects.isNull(page)) {
