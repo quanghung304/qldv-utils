@@ -28,6 +28,8 @@ public class User extends BaseEntity<String> {
     Integer depId;
     String phone;
     Integer vneid;
+    Integer active;
+    Integer deleted;
 
     @Override
     protected void onCreate() {
