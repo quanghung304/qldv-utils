@@ -17,8 +17,6 @@ import java.util.Date;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Table(name = "QLDV_ROLES")
 public class Role extends BaseEntity<String> {
-    @Column(name = "ID")
-    String id;
     @Column(name = "NAME")
     String name;
     @Column(name = "DESCRIPTION")
