@@ -18,8 +18,8 @@ public class UserRole {
     @Id
     @Column(name = "ID")
     String id;
-    @Column(name = "USERID")
+    @Column(name = "USER_ID")
     String userId;
-    @Column(name = "ROLEID")
+    @Column(name = "ROLE_ID")
     String roleId;
 }
