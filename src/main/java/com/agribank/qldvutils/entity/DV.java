@@ -1,0 +1,134 @@
+package com.agribank.qldvutils.entity;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
+
+import java.sql.Timestamp;
+import java.util.Date;
+
+@EqualsAndHashCode(callSuper = true)
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+@FieldDefaults(level = AccessLevel.PRIVATE)
+@Table(name = "qldv_dv")
+public class DV extends BaseCodeEntity{
+    //Mã tcd
+    @Column(name = "organization_code")
+    String organizationCode;
+    //Số lý lịch
+    @Column(name = "resume_number")
+    String resumeNumber;
+    //số thẻ Đảng viên
+    @Column(name = "party_card_number")
+    String partyCardNumber;
+    //ngày cấp thẻ Đảng
+    @Column(name = "issue_date")
+    Date issueDate;
+    //cccd
+    String vneid;
+    @Column(name = "full_name")
+    String fullName;
+    Integer gender;
+    //họ tên đang sử dụng
+    @Column(name = "using_name")
+    String usingName;
+    Timestamp birthday;
+    @Column(name = "birth_place")
+    String birthPlace;
+    String hometown;
+    //hộ khẩu thường trú
+    @Column(name = "permanent_residence")
+    String permanentResidence;
+    //tạm trú
+    @Column(name = "temporary_residence")
+    String temporaryResidence;
+    //dân tộc
+    String ethnic;
+    //Tôn giáo
+    String religion;
+    //thành phần gia đình
+    @Column(name = "family_composition")
+    String familyComposition;
+    //Gia đình liệt sĩ
+    @Column(name = "martyrs_family")
+    Integer martyrsFamily;
+    //Có công với cachs mạng
+    Integer revolution;
+    //Thành phần xã hội khi vào Đảng
+    @Column(name = "social_composition")
+    String socialComposition;
+    //công việc chính đang làm
+    @Column(name = "main_job")
+    String mainJob;
+    //Ngày kết nạp Đảng
+    @Column(name = "admission_date")
+    Date admissionDate;
+    //nguồn kết nạp
+    @Column(name = "source_recruitment")
+    Integer sourceRecruitment;
+    @Column(name = "external_party")
+    String externalParty;
+    //Kết nạp tại chi bộ
+    @Column(name = "branch_party_code")
+    String branchPartyCode;
+    //công đoàn giới thiệu
+    @Column(name = "suggestion_union")
+    Integer suggestionUnion;
+    //Đoàn thanh niên giới thiệu
+    @Column(name = "suggestion_youth_union")
+    Integer suggestionYouthUnion;
+    //Người giới thiệu 1
+    String referrer1;
+    //Chức vụ đơn vị của người giới thiệu;
+    @Column(name = "job_position1")
+    String jobPosition1;
+    String referrer2;
+    @Column(name = "job_position2")
+    String jobPosition2;
+    //Ngày công nhận chính thức
+    @Column(name = "official_recognition_day")
+    Date officialRecognitionDay;
+    //tham gia tổ chức khác
+    @Column(name = "recruit_another_organization")
+    String recruitAnotherOrganization;
+    //Ngày tuyển vào Agribank
+    @Column(name = "agri_recruit_date")
+    Date agriRecruitDate;
+    //Chi nhánh tuyển dụng
+    @Column(name = "recruit_brcd")
+    String recruitBrcd;
+    //Ngày vào Đoàn
+    @Column(name = "youth_union_join_date")
+    Date youthUnionJoinDate;
+    //Tổ chức xã hội khác
+    @Column(name = "other_social_organization")
+    String otherSocialOrganization;
+    //Ngày nhập ngũ
+    @Column(name = "enlistment_date")
+    Date enlistmentDate;
+    //Ngày xuất ngũ
+    @Column(name = "discharge_date")
+    Date dischargeDate;
+    //Loại thương binh
+    @Column(name = "disabled_type")
+    Integer disabledType;
+    //Có vấn đề chính trị
+    @Column(name = "political_issue")
+    Integer politicalIssue;
+    //Chế độ cũ
+    @Column(name = "old_regime")
+    Integer oldRegime;
+    //Xuất thân là công nhân
+    @Column(name = "former_worker")
+    Integer formerWorker;
+    //Kết hôn với người nước ngoài
+    @Column(name = "foreign_marriage")
+    Integer foreignMarriage;
+    Integer status;
+}
