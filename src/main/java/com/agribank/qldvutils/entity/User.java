@@ -13,12 +13,12 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Table(name = "QLDV_USER")
 public class User extends BaseEntity<String> {
+    @Column(name = "staff_code")
+    String staffCode;
     @Column(name = "dv_code")
     String dvCode;
     @Column(name = "id_iam")
     Integer idIam;
-    @Column(name = "role_id")
-    Integer roleId;
     String username;
     @Column(name = "full_name")
     String fullName;
@@ -27,7 +27,7 @@ public class User extends BaseEntity<String> {
     @Column(name = "dep_id")
     Integer depId;
     String phone;
-    Integer vneid;
+    String vneid;
     Integer active;
     Integer deleted;
 
