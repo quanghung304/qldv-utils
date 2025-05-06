@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.experimental.FieldDefaults;
 
 import java.sql.Timestamp;
+import java.util.UUID;
 
 @Data
 @MappedSuperclass
