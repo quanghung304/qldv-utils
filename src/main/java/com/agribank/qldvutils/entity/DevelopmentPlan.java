@@ -22,7 +22,7 @@ public class DevelopmentPlan extends BaseEntity<String> {
     String name;
 
     @Column(name = "SESSIONS")
-    String sessions;
+    Integer sessions;
 
     @Column(name = "TARGET")
     Integer target;
@@ -30,8 +30,8 @@ public class DevelopmentPlan extends BaseEntity<String> {
     @Column(name = "PRNTBRCD")
     String prntBrcd;
 
-    @Column(name = "ORGANIZE_LEVEL")
-    Integer level;
+    @Column(name = "HAS_CHILD")
+    Integer hasChild;
 
     @Override
     protected void onCreate() {
