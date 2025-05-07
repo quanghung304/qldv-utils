@@ -15,7 +15,7 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Table(name = "QLDV_DEVELOPMENT_PLAN_DETAIL")
 public class DevelopmentPlanDetail extends BaseEntity<String>{
-    @Column(name="REFID")
+    @Column(name="PLANID")
     String refId;
 
     @Column(name="TARGET")

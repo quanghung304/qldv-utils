@@ -21,8 +21,11 @@ public class DevelopmentPlan extends BaseEntity<String> {
     @Column(name = "NAME")
     String name;
 
-    @Column(name = "SESSIONS")
-    Integer sessions;
+    @Column(name = "START_YEAR")
+    Integer start;
+
+    @Column(name = "END_YEAR")
+    Integer end;
 
     @Column(name = "TARGET")
     Integer target;
