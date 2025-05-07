@@ -6,7 +6,6 @@ import jakarta.persistence.Table;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
-import java.util.Date;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
