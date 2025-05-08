@@ -15,18 +15,12 @@ import java.util.Date;
 @AllArgsConstructor
 @Entity
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Table(name = "qldv_organization")
-public class Organization extends BaseCodeEntity{
+@Table(name = "qldv_establishment_dissolve")
+public class EstablishmentDissolve extends BaseEntity<String>{
+    String code;
     String name;
-    Integer brcd;
-    //hình thức
     String form;
-    //Mã tcd cấp trên
-    @Column(name = "parent_code")
-    String parentCode;
-    //được ủy quyền kết nạp, khai trừ
-    @Column(name = "authorized")
-    Integer authorized;
+    Integer type;
     //Số kết luận/nghị quyết
     @Column(name = "resolution_number")
     String resolutionNumber;
@@ -44,14 +38,4 @@ public class Organization extends BaseCodeEntity{
     Date effectiveDate;
     //trạng thái đang hoạt động, giải thể
     String status;
-
-    @Override
-    protected void onCreate() {
-        super.onCreate();
-    }
-
-    @Override
-    protected void onUpdate() {
-        super.onUpdate();
-    }
 }
