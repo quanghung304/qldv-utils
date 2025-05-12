@@ -15,8 +15,11 @@ import java.util.Date;
 @AllArgsConstructor
 @Entity
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Table(name = "qldv_organization")
-public class Organization extends BaseCodeEntity{
+@Table(name = "qldv_organization_draft")
+public class OrganizationDraft extends BaseEntity<String> {
+    String code;
+    @Column(name = "organization_code")
+    String organizationCode;
     String name;
     Integer brcd;
     //hình thức
@@ -44,7 +47,15 @@ public class Organization extends BaseCodeEntity{
     Date effectiveDate;
     //trạng thái đang hoạt động, giải thể
     String status;
-
+    Integer approve;
+    @Column(name = "username_created")
+    String usernameCreated;
+    @Column(name = "user_brcd_created")
+    Integer userBrcdCreated;
+    @Column(name = "username_accepted")
+    String usernameAccepted;
+    @Column(name = "user_brcd_accepted")
+    Integer userBrcdAccepted;
     @Override
     protected void onCreate() {
         super.onCreate();
