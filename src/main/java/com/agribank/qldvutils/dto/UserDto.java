@@ -1,26 +1,27 @@
 package com.agribank.qldvutils.dto;
 
+import jakarta.persistence.Column;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 @Data
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class UserDto {
-    Integer id;
-    String userId;
-    Integer brcd;
+    String id;
+    String staffCode;
+    String dvCode;
+    Integer idIam;
     String username;
     String fullName;
     String email;
-    String address;
-    String phone;
-    Integer vneid;
-    Integer gender;
-    Integer staffCode;
-    String jobPosition;
-    Integer active;
-    String createdBy;
-    String userCreated;
+    Integer brcd;
+    String organizationCode;
     Integer depId;
+    String phone;
+    String vneid;
+    Integer active;
+    Integer deleted;
 }
