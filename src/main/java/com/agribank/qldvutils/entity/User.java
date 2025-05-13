@@ -15,8 +15,6 @@ import lombok.experimental.FieldDefaults;
 public class User extends BaseEntity<String> {
     @Column(name = "staff_code")
     String staffCode;
-    @Column(name = "dv_code")
-    String dvCode;
     @Column(name = "id_iam")
     Integer idIam;
     String username;
