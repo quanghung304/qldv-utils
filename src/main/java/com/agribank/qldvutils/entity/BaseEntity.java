@@ -11,7 +11,9 @@ import java.sql.Timestamp;
 @MappedSuperclass
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class BaseEntity <T>{
+
     @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
     T id;
 
     @Column(name = "created_at")

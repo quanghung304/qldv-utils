@@ -15,8 +15,8 @@ import java.util.Date;
 @AllArgsConstructor
 @Entity
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Table(name = "qldv_establishment_dissolve")
-public class EstablishmentDissolve extends BaseEntity<String>{
+@Table(name = "qldv_establishment_dissolve_draft")
+public class EstablishmentDissolveDraft extends BaseEntity<String>{
     String code;
     String name;
     String form;
@@ -36,4 +36,13 @@ public class EstablishmentDissolve extends BaseEntity<String>{
     //Ngày hiệu lực
     @Column(name = "effective_date")
     Date effectiveDate;
+    Integer status;
+    @Column(name = "username_created")
+    String usernameCreated;
+    @Column(name = "user_brcd_created")
+    Integer userBrcdCreated;
+    @Column(name = "username_accepted")
+    String usernameAccepted;
+    @Column(name = "user_brcd_accepted")
+    Integer userBrcdAccepted;
 }
