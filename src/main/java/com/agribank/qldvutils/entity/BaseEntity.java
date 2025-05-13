@@ -11,6 +11,7 @@ import java.sql.Timestamp;
 @MappedSuperclass
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class BaseEntity <T>{
+
     @Id
     T id;
 
