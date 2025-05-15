@@ -21,8 +21,8 @@ public class DevelopmentPlan {
     @Column(name = "ID")
     String id;
 
-    @Column(name = "BRCD")
-    String brcd;
+    @Column(name = "ORGANIZATION_CODE")
+    String organizationCode;
 
     @Column(name = "NAME")
     String name;
@@ -36,8 +36,8 @@ public class DevelopmentPlan {
     @Column(name = "TARGET")
     Integer target;
 
-    @Column(name = "PRNTBRCD")
-    String prntBrcd;
+    @Column(name = "PRNT_CODE")
+    String prntCode;
 
     @Column(name = "HAS_CHILD")
     Integer hasChild;
