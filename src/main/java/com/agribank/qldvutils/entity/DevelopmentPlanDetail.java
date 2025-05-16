@@ -6,7 +6,6 @@ import jakarta.persistence.Table;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
-
 @EqualsAndHashCode(callSuper = true)
 @Data
 @Builder
@@ -14,12 +13,19 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @Entity
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Table(name = "QLDV_ROLES")
-public class Role extends BaseEntity<String> {
-    @Column(name = "NAME")
-    String name;
-    @Column(name = "DESCRIPTION")
-    String description;
+@Table(name = "QLDV_DEVELOPMENT_PLAN_DETAIL")
+public class DevelopmentPlanDetail extends BaseEntity<String>{
+    @Column(name="PLANID")
+    String refId;
+
+    @Column(name="TARGET")
+    Integer target;
+
+    @Column(name="MIN")
+    Integer min;
+
+    @Column(name="YEAR")
+    Integer year;
 
     @Override
     protected void onCreate() {
