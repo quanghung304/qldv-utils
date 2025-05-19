@@ -18,6 +18,8 @@ import java.util.Date;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Table(name = "qldv_dv")
 public class DV extends BaseCodeEntity{
+    @Column(name = "staff_code")
+    String staffCode;
     //Mã tcd
     @Column(name = "organization_code")
     String organizationCode;
