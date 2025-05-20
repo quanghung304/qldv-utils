@@ -18,7 +18,7 @@ import java.sql.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class TransformationHistory extends BaseEntity<String> {
+public class TransformationHistory extends BaseFormEntity<String> {
     @Column(name = "organization_code")
     String organizationCode;
     @Column(name = "old_name")
@@ -29,22 +29,4 @@ public class TransformationHistory extends BaseEntity<String> {
     String newName;
     @Column(name = "new_form")
     String newForm;
-    @Column(name = "desicion_committee")
-    @Comment("cap quyet dinh")
-    String decisionCommittee;
-    @Column(name = "conclusion_number")
-    @Comment("so ket luan/nghi quyet")
-    String conclusionNumber;
-    @Column(name = "conclusion_date") //ngay ket luan/nghi quyet
-    @Comment("ngay ket luan/nghi quyet")
-    Date conclusionDate;
-    @Column(name = "decision_number")
-    @Comment("so quyet dinh")
-    String decisionNumber;
-    @Column(name = "decision_date")
-    @Comment("ngay quyet dinh")
-    Date decisionDate;
-    @Column(name = "effective_date")
-    @Comment("ngay hieu luc")
-    Date effectiveDate;
 }
