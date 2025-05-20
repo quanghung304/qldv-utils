@@ -28,9 +28,11 @@ public class TransformationHistoryDraft extends BaseFormEntity<String> {
     @Column(name = "new_form")
     String newForm;
 
+    @Column(name = "created_by")
     @Comment("ma can bo thuc hien")
-    String submitter;
+    String createdBy;
+    @Column(name = "approved_by")
     @Comment("ma can bo duyet")
-    String approver;
+    String approvedBy;
     Integer status;
 }
