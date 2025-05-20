@@ -16,7 +16,7 @@ import java.sql.Date;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Entity
 @Table(name = "qldv_transformation_history_draft")
-public class TransformationHistoryDraft extends BaseEntity<String> {
+public class TransformationHistoryDraft extends BaseFormEntity<String> {
     @Column(name = "organization_code")
     String organizationCode;
     @Column(name = "old_name")
@@ -27,18 +27,7 @@ public class TransformationHistoryDraft extends BaseEntity<String> {
     String newName;
     @Column(name = "new_form")
     String newForm;
-    @Column(name = "desicion_committee")
-    String decisionCommittee;
-    @Column(name = "conclusion_number")
-    String conclusionNumber;
-    @Column(name = "conclusion_date")
-    Date conclusionDate;
-    @Column(name = "decision_number")
-    String decisionNumber;
-    @Column(name = "decision_date")
-    Date decisionDate;
-    @Column(name = "effective_date")
-    Date effectiveDate;
+
     @Comment("ma can bo thuc hien")
     String submitter;
     @Comment("ma can bo duyet")
