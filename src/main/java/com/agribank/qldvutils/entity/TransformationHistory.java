@@ -4,15 +4,13 @@ import com.agribank.qldvutils.enums.Constants;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.hibernate.annotations.Comment;
 
 import java.sql.Date;
 
+@Data
 @Builder
 @Entity
 @Table(name = "qldv_transformation_history", schema = Constants.DV_DL)
