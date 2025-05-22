@@ -1,5 +1,6 @@
 package com.agribank.qldvutils.entity;
 
+import com.agribank.qldvutils.enums.Constants;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -13,7 +14,7 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @Entity
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Table(name = "QLDV_USER_ROLE")
+@Table(name = "QLDV_USER_ROLE", schema = Constants.DV_DL)
 public class UserRole {
     @Id
     @Column(name = "ID")
