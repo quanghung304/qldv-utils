@@ -38,7 +38,7 @@
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
 			<artifactId>jjwt-api</artifactId>
-			<version>0.11.2</version> <!-- Use the latest version available -->
+			<version>0.11.2</version> <!-- Use the latest version available-->
 		</dependency>
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>

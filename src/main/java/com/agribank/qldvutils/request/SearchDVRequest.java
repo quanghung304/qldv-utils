@@ -1,17 +1,18 @@
 package com.agribank.qldvutils.request;
 
 import lombok.AccessLevel;
-import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.experimental.FieldDefaults;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
-@Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class SearchDVRequest extends PagingRequest {
-    String staffCode;
+    Integer brcd;
     String name;
-    String vneid;
     String organizationCode;
-    String form;
+    String parentCode;
+    String vneid;
+    String code;
 }
