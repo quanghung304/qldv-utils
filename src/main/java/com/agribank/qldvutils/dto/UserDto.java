@@ -19,6 +19,7 @@ public class UserDto {
     String email;
     Integer brcd;
     String organizationCode;
+    String formOrganization;
     Integer depId;
     String phone;
     String vneid;
