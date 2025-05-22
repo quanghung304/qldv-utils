@@ -18,10 +18,8 @@ import java.util.Date;
 @AllArgsConstructor
 @Entity
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Table(name = "qldv_dv", schema = Constants.DV_DL)
-public class DV extends BaseCodeEntity{
-    @Column(name = "staff_code")
-    String staffCode;
+@Table(name = "qldv_dv_draft", schema = Constants.DV_DL)
+public class DvDraft extends BaseDraftEntity{
     //Mã tcd
     @Column(name = "organization_code")
     String organizationCode;
@@ -134,10 +132,4 @@ public class DV extends BaseCodeEntity{
     //Kết hôn với người nước ngoài
     @Column(name = "foreign_marriage")
     Integer foreignMarriage;
-    @Comment("quan chung/dv du bi/dv chinh thuc/ra khoi dang...")
-    Integer status;
-    @Comment("ma can bo thuc hien")
-    String submitter;
-    @Comment("ma can bo duyet")
-    String approver;
 }

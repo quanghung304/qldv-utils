@@ -1,5 +1,6 @@
 package com.agribank.qldvutils.entity;
 
+import com.agribank.qldvutils.enums.Constants;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.*;
@@ -12,7 +13,7 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @Entity
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Table(name = "qldv_ethnic")
+@Table(name = "qldv_ethnic", schema = Constants.DV_DL)
 public class Ethnic extends BaseEntity<String>{
     String name;
 
