@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+import org.hibernate.annotations.Comment;
 
 import java.util.Date;
 
@@ -20,14 +21,11 @@ public class EstablishmentDissolveDraft extends BaseFormEntity<String>{
     String code;
     String name;
     String form;
+    @Comment("0: thanh lap, 6: giai the")
     Integer type;
     Integer status;
-    @Column(name = "username_created")
-    String usernameCreated;
-    @Column(name = "user_brcd_created")
-    Integer userBrcdCreated;
-    @Column(name = "username_accepted")
-    String usernameAccepted;
-    @Column(name = "user_brcd_accepted")
-    Integer userBrcdAccepted;
+    @Column(name = "created_by")
+    String createdBy;
+    @Column(name = "approved_by")
+    String approvedBy;
 }
