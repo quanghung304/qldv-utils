@@ -12,6 +12,7 @@ import java.util.Date;
 public class FilterRequest extends PagingRequest {
     @NotNull(message = "Khong duoc bo trong type")
     Integer type;
+    String organizationCode;
     String formCode;
     String createdBy;
     String approvedBy;

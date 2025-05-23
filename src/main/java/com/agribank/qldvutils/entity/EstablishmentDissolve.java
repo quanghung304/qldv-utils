@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+import org.hibernate.annotations.Comment;
 
 import java.util.Date;
 
@@ -20,5 +21,6 @@ public class EstablishmentDissolve extends BaseFormEntity<String>{
     String code;
     String name;
     String form;
+    @Comment("0: thanh lap, 6: giai the")
     Integer type;
 }
