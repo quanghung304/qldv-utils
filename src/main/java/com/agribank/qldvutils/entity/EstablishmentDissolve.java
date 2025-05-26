@@ -18,7 +18,8 @@ import java.util.Date;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Table(name = "qldv_establishment_dissolve")
 public class EstablishmentDissolve extends BaseFormEntity<String>{
-    String code;
+    @Column(name = "organization_code")
+    String organizationCode;
     String name;
     String form;
     @Comment("0: thanh lap, 6: giai the")

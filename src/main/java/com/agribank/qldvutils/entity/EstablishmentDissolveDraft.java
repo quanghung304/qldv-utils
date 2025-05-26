@@ -18,7 +18,8 @@ import java.util.Map;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Table(name = "qldv_establishment_dissolve_draft")
 public class EstablishmentDissolveDraft extends BaseFormEntity<String>{
-    String code;
+    @Column(name = "organization_code")
+    String organizationCode;
     String name;
     String form;
     @Comment("0: thanh lap, 6: giai the")
@@ -32,7 +33,7 @@ public class EstablishmentDissolveDraft extends BaseFormEntity<String>{
     String approvedBy;
 
     public static Map<String, String> FIELD_MAP = Map.of(
-            "code", "Mã chi, đảng bộ",
+            "organizationCode", "Mã chi, đảng bộ",
             "name", "Tên chi, đảng bộ",
             "form", "Hình thức chi, đảng bộ"
     );
