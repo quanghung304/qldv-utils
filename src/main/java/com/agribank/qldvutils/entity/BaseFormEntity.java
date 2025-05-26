@@ -8,6 +8,7 @@ import org.hibernate.annotations.Comment;
 
 import java.sql.Date;
 import java.sql.Timestamp;
+import java.util.Map;
 
 @Data
 @MappedSuperclass
@@ -41,6 +42,15 @@ public class BaseFormEntity<T> {
     Timestamp createdAt;
     @Column(name = "updated_at")
     Timestamp updatedAt;
+
+    public static Map<String, String> BASE_FIELD_MAP = Map.of(
+            "decisionCommittee", "Cấp ủy quyết định",
+            "conclusionNumber", "Số Kết luận/Nghị quyết",
+            "conclusionDate", "Ngày Kết luận/Nghị quyết",
+            "decisionNumber", "Số Quyết định",
+            "decisionDate", "Ngày Quyết định",
+            "effectiveDate", "Ngày hiệu lực"
+    );
 
     @PrePersist
     protected void onCreate() {

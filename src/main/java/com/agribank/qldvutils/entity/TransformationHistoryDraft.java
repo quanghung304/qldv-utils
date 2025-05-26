@@ -7,7 +7,7 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.hibernate.annotations.Comment;
 
-import java.sql.Date;
+import java.util.Map;
 
 @Data
 @Builder
@@ -32,5 +32,14 @@ public class TransformationHistoryDraft extends BaseFormEntity<String> {
     String createdBy;
     @Comment("ma can bo duyet")
     String approvedBy;
+    @Comment("0: pending, 1: da duyet, 2: huy bo")
     Integer status;
+
+    public static Map<String, String> FIELD_MAP = Map.of(
+            "organizationCode", "Mã chi, đảng bộ",
+            "oldName", "Tên chi, đảng bộ trước khi nâng cấp/hạ cấp",
+            "oldForm", "Hình thức chi, đảng bộ trước khi nâng cấp/hạ cấp",
+            "newName", "Tên chi, đảng bộ sau khi nâng cấp/hạ cấp",
+            "newForm", "Hình thức chi, đảng bộ sau khi nâng cấp/hạ cấp"
+    );
 }
