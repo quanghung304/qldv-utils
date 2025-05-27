@@ -20,6 +20,8 @@ import java.sql.Date;
 public class TransformationHistory extends BaseFormEntity<String> {
     @Column(name = "organization_code")
     String organizationCode;
+    @Comment("1: nang cap, 2: ha cap")
+    Integer type;
     @Column(name = "old_name")
     String oldName;
     @Column(name = "old_form")
