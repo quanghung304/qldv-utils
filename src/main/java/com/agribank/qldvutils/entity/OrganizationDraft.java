@@ -8,6 +8,9 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.util.Date;
+import java.util.Map;
+
+import static java.util.Map.entry;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
@@ -66,4 +69,19 @@ public class OrganizationDraft extends BaseEntity<String> {
     protected void onUpdate() {
         super.onUpdate();
     }
+
+    public static Map<String, String> FIELD_MAP = Map.ofEntries(
+            entry("code", "Mã chi, đảng bộ"),
+            entry("name", "Tên chi, đảng bộ"),
+            entry("brcd", "Mã chi nhánh"),
+            entry("form", "Hình thức TCD"),
+            entry("parentCode", "Mã chi nhánh cha"),
+            entry("authorized", "Được ủy quyền"),
+            entry("resolutionNumber", "Số KL/NQQ"),
+            entry("resolutionDate", "Ngày kết luận/nghị quyết"),
+            entry("establishmentDecisionNumber", "Số quyết định thành lập"),
+            entry("decisionDate", "Ngày quyết định"),
+            entry("effectiveDate", "Ngày hiệu lực"),
+            entry("status", "trạng thái đang hoạt động, giải thể")
+    );
 }
