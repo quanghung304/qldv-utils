@@ -16,6 +16,8 @@ import java.sql.Date;
 public class Request extends BaseEntity<String> {
     @Comment("0: tcd, 1: dang vien, 2: can bo")
     Integer type;
+    @Column(name = "parent_organization_code")
+    String parentOrganizationCode;
     @Column(name = "organization_code")
     String organizationCode;
     @Column(name = "form_code")
