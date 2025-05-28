@@ -13,7 +13,7 @@ import java.util.Objects;
 public class PagingRequest {
     private Integer page;
     private Integer pageSize;
-    private String sort = "ASC";
+    private String sort;
     private String orderBy;
 
     public void validate(){
