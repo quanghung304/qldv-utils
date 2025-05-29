@@ -9,9 +9,9 @@ import lombok.experimental.FieldDefaults;
 import org.hibernate.annotations.Immutable;
 
 @Data
-@Entity
+//@Entity
 @Immutable
-@Table(name = "tbga_hrjoin", schema = Constants.MIS_DL)
+//@Table(name = "tbga_hrjoin", schema = Constants.MIS_DL)
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class HRCode {
     @EmbeddedId

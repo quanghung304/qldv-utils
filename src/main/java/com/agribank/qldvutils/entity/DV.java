@@ -10,6 +10,9 @@ import org.hibernate.annotations.Comment;
 
 import java.sql.Timestamp;
 import java.util.Date;
+import java.util.Map;
+
+import static java.util.Map.entry;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
@@ -19,7 +22,7 @@ import java.util.Date;
 @Entity
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Table(name = "qldv_dv", schema = Constants.DV_DL)
-public class DV extends BaseCodeEntity{
+public class DV extends BaseEntity<String>{
     @Column(name = "staff_code")
     String staffCode;
     //Mã tcd
@@ -61,9 +64,11 @@ public class DV extends BaseCodeEntity{
     String familyComposition;
     //Gia đình liệt sĩ
     @Column(name = "martyrs_family")
-    Integer martyrsFamily;
+    @Comment("Y/N")
+    String martyrsFamily;
     //Có công với cachs mạng
-    Integer revolution;
+    @Comment("Y/N")
+    String revolution;
     //Thành phần xã hội khi vào Đảng
     @Column(name = "social_composition")
     String socialComposition;
@@ -75,18 +80,19 @@ public class DV extends BaseCodeEntity{
     Date admissionDate;
     //nguồn kết nạp
     @Column(name = "source_recruitment")
+    @Comment("1: sinh viên, 2: đảng bộ ngoài Agribank")
     Integer sourceRecruitment;
-    @Column(name = "external_party")
-    String externalParty;
     //Kết nạp tại chi bộ
     @Column(name = "branch_party_code")
     String branchPartyCode;
     //công đoàn giới thiệu
     @Column(name = "suggestion_union")
-    Integer suggestionUnion;
+    @Comment("Y/N")
+    String suggestionUnion;
     //Đoàn thanh niên giới thiệu
     @Column(name = "suggestion_youth_union")
-    Integer suggestionYouthUnion;
+    @Comment("Y/N")
+    String suggestionYouthUnion;
     //Người giới thiệu 1
     String referrer1;
     //Chức vụ đơn vị của người giới thiệu;
@@ -124,20 +130,85 @@ public class DV extends BaseCodeEntity{
     Integer disabledType;
     //Có vấn đề chính trị
     @Column(name = "political_issue")
-    Integer politicalIssue;
+    @Comment("Y/N")
+    String politicalIssue;
     //Chế độ cũ
     @Column(name = "old_regime")
-    Integer oldRegime;
+    @Comment("Y/N")
+    String oldRegime;
     //Xuất thân là công nhân
     @Column(name = "former_worker")
-    Integer formerWorker;
+    @Comment("Y/N")
+    String formerWorker;
     //Kết hôn với người nước ngoài
     @Column(name = "foreign_marriage")
-    Integer foreignMarriage;
-    @Comment("quan chung/dv du bi/dv chinh thuc/ra khoi dang...")
-    Integer status;
+    @Comment("Y/N")
+    String foreignMarriage;
+    @Column(name = "foreign_related")
+    @Comment("Có liên quan đến yếu tố nước ngoài: Y/N")
+    String foreignRelated;
+    @Comment("Trình độ")
+    String degree;
+    @Comment("Học vấn phổ thông: 10/10, 12/12, khác")
+    String education;
+    @Column(name = "health_condition")
+    @Comment("Tình trạng sức khỏe bản thân: Tốt/ bình thường/ khác")
+    String healthCondition;
+    @Column(name = "date_df_death")
+    @Comment("Ngày, tháng, năm từ trần")
+    String dateOfDeath;
+
     @Comment("ma can bo thuc hien")
-    String submitter;
+    String createdBy;
     @Comment("ma can bo duyet")
-    String approver;
+    String approvedBy;
+
+    public static Map<String, String> FIELD_MAP = Map.ofEntries(
+            entry("organizationCode", "Mã chi, đảng bộ"),
+            entry("resumeNumber", "Số lý lịch"),
+            entry("partyCardNumber", "Số thẻ đảng viên"),
+            entry("vneid", "Số CCCD"),
+            entry("fullName", "Họ tên khai sinh"),
+            entry("gender", "Giới tính"),
+            entry("usingName", "Họ tên đang dùng"),
+            entry("birthday", "Ngày sinh"),
+            entry("birthPlace", "Nơi sinh"),
+            entry("hometown", "Quê quán"),
+            entry("permanentResidence", "Nơi đăng ký hộ khẩu thường trú"),
+            entry("temporaryResidence", "Nơi đăng ký tạm trú hiện nay"),
+            entry("ethnic", "Dân tộc"),
+            entry("religion", "Tôn giáo"),
+            entry("familyComposition", "Thành phần gia đình"),
+            entry("martyrsFamily", "Gia đình liệt sĩ"),
+            entry("revolution", "Gia đình có công với cách mạng"),
+            entry("socialComposition", "Thành phần xã hội khi vào đảng"),
+            entry("mainJob", "Công việc chính đang làm"),
+            entry("admissionDate", "Ngày kết nạp đảng"),
+            entry("sourceRecruitment", "Nguồn kết nạp đảng"),
+            entry("branchPartyCode", "Kết nạp tại chi bộ"),
+            entry("suggestionUnion", "Công đoàn giới thiệu"),
+            entry("suggestionYouthUnion", "Đoàn thanh niên giới thiệu"),
+            entry("referrer1", "Người giới thiệu thứ nhất"),
+            entry("jobPosition1", "Chức vụ, đơn vị của người giới thiệu 1"),
+            entry("referrer2", "Người giới thiệu thứ hai"),
+            entry("jobPosition2", "Chức vụ, đơn vị của người giới thiệu 2"),
+            entry("officialRecognitionDay", "Ngày công nhận chính thức"),
+            entry("recruitAnotherOrganization", "Tuyển dụng, tham gia tổ chức khác"),
+            entry("agriRecruitDate", "Ngày được tuyển dụng làm cán bộ Agribank"),
+            entry("recruitBrcd", "'Đơn vị/Chi nhánh tuyển dụng"),
+            entry("youthUnionJoinDate", "Ngày vào Đoàn"),
+            entry("otherSocialOrganization", "Tên tổ chức xã hội khác tham gia"),
+            entry("enlistmentDate", "Ngày nhập ngũ"),
+            entry("dischargeDate", "Ngày xuất ngũ"),
+            entry("disabledType", "Loại thương binh"),
+            entry("politicalIssue", "Có vấn đề lịch sử chính trị"),
+            entry("oldRegime", "Bản thân có làm việc trong chế độ cũ"),
+            entry("formerWorker", "Xuất thân là công nhân"),
+            entry("foreignMarriage", "Kết hôn với người nước ngoài"),
+            entry("foreignRelated", "Có liên quan đến yếu tố nước ngoài"),
+            entry("degree", "Trình độ"),
+            entry("education", "Học vấn phổ thông"),
+            entry("healthCondition", "Tình trạng sức khỏe"),
+            entry("dateOfDeath", "Ngày từ trần")
+    );
 }

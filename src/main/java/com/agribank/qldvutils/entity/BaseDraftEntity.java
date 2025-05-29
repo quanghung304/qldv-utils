@@ -13,18 +13,17 @@ import java.sql.Timestamp;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class BaseDraftEntity {
     @Id
-    String code;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    String id;
 
     @Column(name = "created_at")
     Timestamp createdAt;
     @Column(name = "updated_at")
     Timestamp updatedAt;
-    @Comment("0: create, 1: update, 2: delete")
-    Integer action;
     @Comment("ma can bo thuc hien")
-    String submitter;
+    String createdBy;
     @Comment("ma can bo duyet")
-    String approver;
+    String approvedBy;
     @Comment("0: pending, 1: da duyet, 2: huy bo")
     Integer status;
 

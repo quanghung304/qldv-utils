@@ -19,7 +19,9 @@ import java.util.Date;
 @Entity
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Table(name = "qldv_dv_draft", schema = Constants.DV_DL)
-public class DvDraft extends BaseDraftEntity{
+public class DvDraft extends BaseDraftEntity {
+    @Column(name = "staff_code")
+    String staffCode;
     //Mã tcd
     @Column(name = "organization_code")
     String organizationCode;
@@ -59,9 +61,11 @@ public class DvDraft extends BaseDraftEntity{
     String familyComposition;
     //Gia đình liệt sĩ
     @Column(name = "martyrs_family")
-    Integer martyrsFamily;
+    @Comment("Y/N")
+    String martyrsFamily;
     //Có công với cachs mạng
-    Integer revolution;
+    @Comment("Y/N")
+    String revolution;
     //Thành phần xã hội khi vào Đảng
     @Column(name = "social_composition")
     String socialComposition;
@@ -73,18 +77,19 @@ public class DvDraft extends BaseDraftEntity{
     Date admissionDate;
     //nguồn kết nạp
     @Column(name = "source_recruitment")
+    @Comment("1: sinh viên, 2: đảng bộ ngoài Agribank")
     Integer sourceRecruitment;
-    @Column(name = "external_party")
-    String externalParty;
     //Kết nạp tại chi bộ
     @Column(name = "branch_party_code")
     String branchPartyCode;
     //công đoàn giới thiệu
     @Column(name = "suggestion_union")
-    Integer suggestionUnion;
+    @Comment("Y/N")
+    String suggestionUnion;
     //Đoàn thanh niên giới thiệu
     @Column(name = "suggestion_youth_union")
-    Integer suggestionYouthUnion;
+    @Comment("Y/N")
+    String suggestionYouthUnion;
     //Người giới thiệu 1
     String referrer1;
     //Chức vụ đơn vị của người giới thiệu;
@@ -122,14 +127,31 @@ public class DvDraft extends BaseDraftEntity{
     Integer disabledType;
     //Có vấn đề chính trị
     @Column(name = "political_issue")
-    Integer politicalIssue;
+    @Comment("Y/N")
+    String politicalIssue;
     //Chế độ cũ
     @Column(name = "old_regime")
-    Integer oldRegime;
+    @Comment("Y/N")
+    String oldRegime;
     //Xuất thân là công nhân
     @Column(name = "former_worker")
-    Integer formerWorker;
+    @Comment("Y/N")
+    String formerWorker;
     //Kết hôn với người nước ngoài
     @Column(name = "foreign_marriage")
-    Integer foreignMarriage;
+    @Comment("Y/N")
+    String foreignMarriage;
+    @Column(name = "foreign_related")
+    @Comment("Có liên quan đến yếu tố nước ngoài: Y/N")
+    String foreignRelated;
+    @Comment("Trình độ")
+    String degree;
+    @Comment("Học vấn phổ thông: 10/10, 12/12, khác")
+    String education;
+    @Column(name = "health_condition")
+    @Comment("Tình trạng sức khỏe bản thân: Tốt/ bình thường/ khác")
+    String healthCondition;
+    @Column(name = "date_df_death")
+    @Comment("Ngày, tháng, năm từ trần")
+    String dateOfDeath;
 }
