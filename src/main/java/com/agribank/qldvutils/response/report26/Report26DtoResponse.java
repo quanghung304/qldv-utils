@@ -11,6 +11,7 @@ import java.util.Date;
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Report26DtoResponse {
+    String id;
     String fullName;
     String staffCode;
     Integer type;
