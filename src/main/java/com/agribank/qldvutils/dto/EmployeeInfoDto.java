@@ -32,4 +32,5 @@ public class EmployeeInfoDto {
     String religionName;
     String email;
     String brcd;
+    String idNo;
 }

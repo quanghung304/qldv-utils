@@ -7,6 +7,7 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.util.Date;
+import java.util.Map;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
@@ -35,12 +36,23 @@ public class MembershipProposalDraft extends BaseEntity<String>{
     @Column(name = "decision_date")
     Date decisionDate;
     Integer status;
-    @Column(name = "username_created")
-    String usernameCreated;
-    @Column(name = "user_brcd_created")
-    Integer userBrcdCreated;
-    @Column(name = "username_accepted")
-    String usernameAccepted;
-    @Column(name = "user_brcd_accepted")
-    Integer userBrcdAccepted;
+    @Column(name = "created_by")
+    String createdBy ;
+    @Column(name = "approved_by")
+    String approvedBy;
+    @Column(name = "ref_id")
+    String refId;
+    @Column(name = "full_name")
+    String fullName;
+
+    public static Map<String, String> FIELD_MAP = Map.of(
+            "organizationCode", "Mã chi, đảng bộ",
+            "staffCode", "Mã nhân viên",
+            "reason", "Lý do kết nạp lần 2",
+            "resolutionNumber", "Số kết luận nghị quyết",
+            "resolutionDate", "Ngày kết luận nghị quyết",
+            "decisionNumber", "Số quyết định",
+            "decisionDate", "Ngày quyết định",
+            "fullName", "Họ tên"
+    );
 }

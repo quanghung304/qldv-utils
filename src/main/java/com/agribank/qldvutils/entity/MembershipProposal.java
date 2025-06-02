@@ -34,4 +34,6 @@ public class MembershipProposal extends BaseEntity<String> {
     //Ngày QĐ
     @Column(name = "decision_date")
     Date decisionDate;
+    @Builder.Default
+    Integer deleted = 0;
 }
