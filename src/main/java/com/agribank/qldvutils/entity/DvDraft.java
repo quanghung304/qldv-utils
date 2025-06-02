@@ -38,7 +38,7 @@ public class DvDraft extends BaseDraftEntity {
     String vneid;
     @Column(name = "full_name")
     String fullName;
-    Integer gender;
+    String gender;
     //họ tên đang sử dụng
     @Column(name = "using_name")
     String usingName;

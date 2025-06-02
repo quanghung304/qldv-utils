@@ -9,28 +9,20 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class EmployeeInfoDto {
-    String empno;
-    String employeeName;
-    String empUsualName;
+    String staffCode;
+    String fullName;
+    String usingName;
     String gender;
-    String birthdt;
-    String birthProvCode;
-    String birthProvName;
-    String birthAddress;
-    String nativeProvCode;
-    String nativeProvName;
-    String nativeAddress;
-    String permanentResidenceProv;
-    String permanentResidenceProvName;
-    String permanentResidenceAddress;
-    String tempResidenceProv;
-    String tempResidenceProvName;
-    String tempResidenceAddress;
+    String birthday;
+    String birthPlace;
+    String hometown;
+    String permanentResidence;
+    String temporaryResidence;
     String raceCode;
-    String raceName;
+    String ethnic;
     String religionCode;
-    String religionName;
+    String religion;
     String email;
     String brcd;
-    String idNo;
+    String vneid;
 }

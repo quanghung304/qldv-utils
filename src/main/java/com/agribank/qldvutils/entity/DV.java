@@ -41,7 +41,7 @@ public class DV extends BaseEntity<String>{
     String vneid;
     @Column(name = "full_name")
     String fullName;
-    Integer gender;
+    String gender;
     //họ tên đang sử dụng
     @Column(name = "using_name")
     String usingName;
@@ -159,8 +159,10 @@ public class DV extends BaseEntity<String>{
     String dateOfDeath;
 
     @Comment("ma can bo thuc hien")
+    @Column(name = "created_by")
     String createdBy;
     @Comment("ma can bo duyet")
+    @Column(name = "approved_by")
     String approvedBy;
 
     public static Map<String, String> FIELD_MAP = Map.ofEntries(
