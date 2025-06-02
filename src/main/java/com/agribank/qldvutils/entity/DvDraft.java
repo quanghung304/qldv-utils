@@ -13,7 +13,6 @@ import java.util.Date;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -38,6 +37,7 @@ public class DvDraft extends BaseDraftEntity {
     String vneid;
     @Column(name = "full_name")
     String fullName;
+    @Comment("M/F: male/female")
     String gender;
     //họ tên đang sử dụng
     @Column(name = "using_name")
@@ -77,8 +77,8 @@ public class DvDraft extends BaseDraftEntity {
     Date admissionDate;
     //nguồn kết nạp
     @Column(name = "source_recruitment")
-    @Comment("1: sinh viên, 2: đảng bộ ngoài Agribank")
-    Integer sourceRecruitment;
+    @Comment("sinh viên, đảng bộ ngoài Agribank")
+    String sourceRecruitment;
     //Kết nạp tại chi bộ
     @Column(name = "branch_party_code")
     String branchPartyCode;
@@ -151,7 +151,11 @@ public class DvDraft extends BaseDraftEntity {
     @Column(name = "health_condition")
     @Comment("Tình trạng sức khỏe bản thân: Tốt/ bình thường/ khác")
     String healthCondition;
-    @Column(name = "date_df_death")
+    @Column(name = "date_of_death")
     @Comment("Ngày, tháng, năm từ trần")
     String dateOfDeath;
+    @Column(name = "dv_status")
+
+    @Comment("0: pending, 1: phe duyet, 2: tu choi")
+    private Integer status;
 }
