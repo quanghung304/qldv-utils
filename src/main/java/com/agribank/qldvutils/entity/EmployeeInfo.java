@@ -45,4 +45,6 @@ public class EmployeeInfo {
     String religionCode;
     @Column(name = "email")
     String email;
+    @Column(name = "IDNO")
+    String idNo;
 }

@@ -1,6 +1,7 @@
 package com.agribank.qldvutils.request;
 
 import jakarta.validation.ValidationException;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,7 +12,9 @@ import java.util.Objects;
 @AllArgsConstructor
 @NoArgsConstructor
 public class PagingRequest {
+    @NotNull(message = "page must not be null")
     private Integer page;
+    @NotNull(message = "pageSize must not be null")
     private Integer pageSize;
     private String sort;
     private String orderBy;
