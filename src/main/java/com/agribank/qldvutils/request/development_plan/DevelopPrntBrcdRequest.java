@@ -1,4 +1,4 @@
-package com.agribank.qldvutils.request.developplan;
+package com.agribank.qldvutils.request.development_plan;
 
 import com.agribank.qldvutils.exception.ValidationException;
 import lombok.*;

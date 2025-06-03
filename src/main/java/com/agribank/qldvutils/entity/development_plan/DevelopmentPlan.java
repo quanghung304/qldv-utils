@@ -1,11 +1,11 @@
-package com.agribank.qldvutils.entity;
+package com.agribank.qldvutils.entity.development_plan;
 
+import com.agribank.qldvutils.entity.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
-import java.sql.Timestamp;
-
+@EqualsAndHashCode(callSuper = true)
 @Data
 @Builder
 @NoArgsConstructor
@@ -13,11 +13,7 @@ import java.sql.Timestamp;
 @Entity
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Table(name = "QLDV_DEVELOPMENT_PLAN")
-public class DevelopmentPlan {
-    @Id
-    @Column(name = "ID")
-    String id;
-
+public class DevelopmentPlan extends BaseEntity<String> {
     @Column(name = "ORGANIZATION_CODE")
     String organizationCode;
 
@@ -39,20 +35,16 @@ public class DevelopmentPlan {
     @Column(name = "HAS_CHILD")
     Integer hasChild;
 
-    @Column(name = "created_at")
-    Timestamp createdAt;
+    @Builder.Default
+    Integer deleted = 0;
 
-    @Column(name = "updated_at")
-    Timestamp updatedAt;
-
-    @PrePersist
-    protected void onCreate() {
-        createdAt = new Timestamp(System.currentTimeMillis());
-        updatedAt = new Timestamp(System.currentTimeMillis());
+    @Override
+    protected void onUpdate() {
+        super.onUpdate();
     }
 
-    @PreUpdate
-    protected void onUpdate() {
-        updatedAt = new Timestamp(System.currentTimeMillis());
+    @Override
+    protected void onCreate() {
+        super.onCreate();
     }
 }
