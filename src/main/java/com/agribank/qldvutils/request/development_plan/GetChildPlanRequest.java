@@ -1,26 +1,21 @@
-package com.agribank.qldvutils.request.developplan;
+package com.agribank.qldvutils.request.development_plan;
 
 import com.agribank.qldvutils.exception.ValidationException;
-import com.agribank.qldvutils.request.PagingRequest;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
-
-@EqualsAndHashCode(callSuper = true)
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class GetPlanRequest extends PagingRequest {
-    String organizationCode;
+public class GetChildPlanRequest {
+    String prntCode;
     String name;
     Integer startYear;
     Integer endYear;
 
-    @Override
-    public void validate() {
-        super.validate();
+    public void validate(){
         if (startYear > endYear) {
             throw new ValidationException("start can not bigger than end");
         }

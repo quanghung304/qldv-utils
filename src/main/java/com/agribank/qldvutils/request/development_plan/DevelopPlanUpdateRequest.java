@@ -1,4 +1,4 @@
-package com.agribank.qldvutils.request.developplan;
+package com.agribank.qldvutils.request.development_plan;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;
