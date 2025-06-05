@@ -1,6 +1,5 @@
 package com.agribank.qldvutils.dto;
 
-import jakarta.persistence.Column;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -25,4 +24,5 @@ public class UserDto {
     String vneid;
     Integer active;
     Integer deleted;
+    String dvStatus;
 }
