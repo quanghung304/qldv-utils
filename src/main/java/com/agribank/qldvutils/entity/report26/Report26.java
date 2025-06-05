@@ -34,7 +34,8 @@ public class Report26 extends BaseEntity<String> {
     @Column(name = "ref_id")
     @Comment("id refer đến báo cáo liên quan biểu 26")
     String refId;
-    Integer deleted;
+    @Builder.Default
+    Integer deleted = 0;
 
     @Override
     protected void onCreate() {
