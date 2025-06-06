@@ -3,6 +3,8 @@ package com.agribank.qldvutils.dto;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
+import java.util.Date;
+
 @Data
 @Builder
 @AllArgsConstructor
@@ -25,4 +27,5 @@ public class EmployeeInfoDto {
     String email;
     String brcd;
     String vneid;
+    Date admissionDate;
 }
