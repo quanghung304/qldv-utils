@@ -20,6 +20,8 @@ public class Request extends BaseEntity<String> {
     String parentOrganizationCode;
     @Column(name = "organization_code")
     String organizationCode;
+    @Column(name = "staff_code")
+    String staffCode;
     @Column(name = "form_code")
     String formCode;
     @Column(name = "form_name")
