@@ -8,7 +8,6 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.hibernate.annotations.Comment;
 
-import java.sql.Timestamp;
 import java.util.Date;
 import java.util.Map;
 
@@ -46,7 +45,7 @@ public class DV extends BaseEntity<String>{
     //họ tên đang sử dụng
     @Column(name = "using_name")
     String usingName;
-    Timestamp birthday;
+    Date birthday;
     @Column(name = "birth_place")
     String birthPlace;
     String hometown;

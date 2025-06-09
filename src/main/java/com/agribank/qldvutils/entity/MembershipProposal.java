@@ -21,6 +21,8 @@ public class MembershipProposal extends BaseEntity<String> {
     String organizationCode;
     @Column(name = "staff_code")
     String staffCode;
+    @Column(name = "full_name")
+    String fullName;
     String reason;
     //Số kết luận nghị quyết
     @Column(name = "resolution_number")
