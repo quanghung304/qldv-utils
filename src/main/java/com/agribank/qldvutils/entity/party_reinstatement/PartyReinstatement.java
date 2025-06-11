@@ -26,9 +26,6 @@ public class PartyReinstatement extends BaseEntity<String> {
     @Column(name = "staff_code")
     @Comment("Mã Nhân viên")
     String staffCode;
-    @Column(name = "desicion_committee")
-    @Comment("Cấp ủy khôi phục đảng tịch")
-    String decisionCommittee;
     @Column(name = "conclusion_number")
     @Comment("so ket luan/nghi quyet")
     String conclusionNumber;
