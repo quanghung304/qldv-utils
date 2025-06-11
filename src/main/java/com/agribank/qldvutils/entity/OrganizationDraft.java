@@ -52,14 +52,10 @@ public class OrganizationDraft extends BaseEntity<String> {
     //trạng thái đang hoạt động, giải thể
     String status;
     Integer approve;
-    @Column(name = "username_created")
-    String usernameCreated;
-    @Column(name = "user_brcd_created")
-    Integer userBrcdCreated;
-    @Column(name = "username_accepted")
-    String usernameAccepted;
-    @Column(name = "user_brcd_accepted")
-    Integer userBrcdAccepted;
+    @Column(name = "created_by")
+    String createdBy;
+    @Column(name = "approved_by")
+    String approvedBy;
     @Override
     protected void onCreate() {
         super.onCreate();
