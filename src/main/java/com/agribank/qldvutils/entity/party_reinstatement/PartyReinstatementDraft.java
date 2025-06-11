@@ -29,9 +29,6 @@ public class PartyReinstatementDraft extends BaseEntity<String> {
     @Column(name = "staff_code")
     @Comment("Mã Nhân viên")
     String staffCode;
-    @Column(name = "desicion_committee")
-    @Comment("Cấp ủy khôi phục đảng tịch")
-    String decisionCommittee;
     @Column(name = "conclusion_number")
     @Comment("so ket luan/nghi quyet")
     String conclusionNumber;
@@ -53,9 +50,8 @@ public class PartyReinstatementDraft extends BaseEntity<String> {
     String approvedBy;
 
     public static Map<String, String> FIELD_MAP = Map.ofEntries(
-            entry("organizationCode", "Mã chi, đảng bộ"),
+            entry("organizationCode", "Cấp ủy khôi phục đảng tịch"),
             entry("staffCode", "Mã nhân viên"),
-            entry("decisionCommittee", "Cấp ủy khôi phục đảng tịch"),
             entry("conclusionNumber", "Số KL/NQ"),
             entry("conclusionDate", "Ngày KL/NQ"),
             entry("decisionNumber", "Số quyết định"),
