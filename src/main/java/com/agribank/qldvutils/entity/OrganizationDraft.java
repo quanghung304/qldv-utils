@@ -7,7 +7,9 @@ import jakarta.persistence.Table;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
+import java.util.Collections;
 import java.util.Date;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 import static java.util.Map.entry;
@@ -66,18 +68,20 @@ public class OrganizationDraft extends BaseEntity<String> {
         super.onUpdate();
     }
 
-    public static Map<String, String> FIELD_MAP = Map.ofEntries(
-            entry("code", "Mã chi, đảng bộ"),
-            entry("name", "Tên chi, đảng bộ"),
-            entry("brcd", "Mã chi nhánh"),
-            entry("form", "Hình thức TCD"),
-            entry("parentCode", "Mã chi nhánh cha"),
-            entry("authorized", "Được ủy quyền"),
-            entry("resolutionNumber", "Số KL/NQQ"),
-            entry("resolutionDate", "Ngày kết luận/nghị quyết"),
-            entry("establishmentDecisionNumber", "Số quyết định thành lập"),
-            entry("decisionDate", "Ngày quyết định"),
-            entry("effectiveDate", "Ngày hiệu lực"),
-            entry("status", "trạng thái đang hoạt động, giải thể")
+    public static Map<String, String> FIELD_MAP = Collections.unmodifiableMap(new LinkedHashMap<>() {
+        {
+            put("code", "Mã chi, đảng bộ");
+                    put("name", "Tên chi, đảng bộ");
+                    put("brcd", "Mã chi nhánh");
+                    put("form", "Hình thức TCD");
+                    put("parentCode", "Mã chi nhánh cha");
+                    put("authorized", "Được ủy quyền");
+                    put("resolutionNumber", "Số KL/NQQ");
+                    put("resolutionDate", "Ngày kết luận/nghị quyết");
+                    put("establishmentDecisionNumber", "Số quyết định thành lập");
+                    put("decisionDate", "Ngày quyết định");
+                    put("effectiveDate", "Ngày hiệu lực");
+                    put("status", "trạng thái đang hoạt động, giải thể");
+        }}
     );
 }

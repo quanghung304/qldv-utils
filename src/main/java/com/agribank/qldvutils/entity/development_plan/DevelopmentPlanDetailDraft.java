@@ -7,6 +7,8 @@ import jakarta.persistence.Table;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
+import java.util.Collections;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 @EqualsAndHashCode(callSuper = true)
@@ -40,9 +42,11 @@ public class DevelopmentPlanDetailDraft extends BaseEntity<String> {
         super.onUpdate();
     }
 
-    public static Map<String, String> BASE_FIELD_MAP = Map.of(
-            "target", "Chỉ tiêu",
-            "min", "Tối thiểu",
-            "year", "Năm"
+    public static Map<String, String> BASE_FIELD_MAP = Collections.unmodifiableMap(new LinkedHashMap<>() {
+        {
+            put("target", "Chỉ tiêu");
+            put("min", "Tối thiểu");
+            put("year", "Năm");
+        }}
     );
 }

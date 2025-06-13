@@ -8,7 +8,9 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.hibernate.annotations.Comment;
 
+import java.util.Collections;
 import java.util.Date;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 import static java.util.Map.entry;
@@ -60,14 +62,18 @@ public class PartyActivityExemptionDraft extends BaseEntity<String> {
         super.onUpdate();
     }
 
-    public static Map<String, String> FIELD_MAP = Map.ofEntries(
-            entry("committeeDecision", "Cấp ủy quyết định"),
-            entry("effectiveDate", "Ngày hiệu lực"),
-            entry("reason", "Lý do"),
-            entry("organizationCode", "Mã chi, đảng bộ"),
-            entry("staffCode", "Mã nhân viên"),
-            entry("decisionNumber", "Số quyết định"),
-            entry("decisionDate", "Ngày quyết định")
+    public static Map<String, String> FIELD_MAP = Collections.unmodifiableMap(
+            new LinkedHashMap<>() {
+                {
+                    put("committeeDecision", "Cấp ủy quyết định");
+                    put("effectiveDate", "Ngày hiệu lực");
+                    put("reason", "Lý do");
+                    put("organizationCode", "Mã chi, đảng bộ");
+                    put("staffCode", "Mã nhân viên");
+                    put("decisionNumber", "Số quyết định");
+                    put("decisionDate", "Ngày quyết định");
+                }
+            }
     );
 
 }

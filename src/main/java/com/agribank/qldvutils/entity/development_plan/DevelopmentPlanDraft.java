@@ -7,6 +7,8 @@ import jakarta.persistence.Table;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
+import java.util.Collections;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 @Data
@@ -46,11 +48,13 @@ public class DevelopmentPlanDraft extends BaseEntity<String> {
     @Column(name = "APPROVED_BY")
     String approvedBy;
 
-    public static Map<String, String> BASE_FIELD_MAP = Map.of(
-            "organizationCode", "Mã chi, Đảng bộ",
-            "name", "Tên chi Đảng bộ",
-            "start", "Từ năm",
-            "end", "Đến năm",
-            "target", "Mục tiêu"
+    public static Map<String, String> BASE_FIELD_MAP = Collections.unmodifiableMap(new LinkedHashMap<>() {
+        {
+            put("organizationCode", "Mã chi, Đảng bộ");
+            put("name", "Tên chi Đảng bộ");
+            put("start", "Từ năm");
+            put("end", "Đến năm");
+            put("target", "Mục tiêu");
+        }}
     );
 }

@@ -6,7 +6,9 @@ import jakarta.persistence.Table;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
+import java.util.Collections;
 import java.util.Date;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 @EqualsAndHashCode(callSuper = true)
@@ -45,14 +47,17 @@ public class MembershipProposalDraft extends BaseEntity<String>{
     @Column(name = "full_name")
     String fullName;
 
-    public static Map<String, String> FIELD_MAP = Map.of(
-            "organizationCode", "Mã chi, đảng bộ",
-            "staffCode", "Mã nhân viên",
-            "reason", "Lý do kết nạp lần 2",
-            "resolutionNumber", "Số kết luận nghị quyết",
-            "resolutionDate", "Ngày kết luận nghị quyết",
-            "decisionNumber", "Số quyết định",
-            "decisionDate", "Ngày quyết định",
-            "fullName", "Họ tên"
+    public static Map<String, String> FIELD_MAP = Collections.unmodifiableMap(
+            new LinkedHashMap<>() {
+                {
+                    put("organizationCode", "Mã chi, đảng bộ");
+                    put( "staffCode", "Mã nhân viên");
+                    put("reason", "Lý do kết nạp lần 2");
+                    put( "resolutionNumber", "Số kết luận nghị quyết");
+                    put( "resolutionDate", "Ngày kết luận nghị quyết");
+                    put( "decisionNumber", "Số quyết định");
+                    put("decisionDate", "Ngày quyết định");
+                    put("fullName", "Họ tên");
+                }}
     );
 }

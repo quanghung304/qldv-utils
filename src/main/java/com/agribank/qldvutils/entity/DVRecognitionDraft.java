@@ -8,7 +8,9 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.hibernate.annotations.Comment;
 
+import java.util.Collections;
 import java.util.Date;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 @EqualsAndHashCode(callSuper = true)
@@ -41,12 +43,15 @@ public class DVRecognitionDraft extends BaseDraftEntity{
     @Column(name = "ref_id")
     String refId;
 
-    public static Map<String, String> FIELD_MAP = Map.of(
-            "staffCode", "Mã cán bộ",
-            "staffName", "Tên cán bộ",
-            "conclusionNumber", "Số KL/Nghị quyết",
-            "decisionNumber", "Số quyết định",
-            "conclusionDate", "Ngày KL/Nghị quyết",
-            "decisionDate", "Ngày quyết định"
+    public static Map<String, String> FIELD_MAP = Collections.unmodifiableMap(
+            new LinkedHashMap<>() {
+                {
+                    put("staffCode", "Mã cán bộ");
+                    put("staffName", "Tên cán bộ");
+                    put("conclusionNumber", "Số KL/Nghị quyết");
+                    put("decisionNumber", "Số quyết định");
+                    put("conclusionDate", "Ngày KL/Nghị quyết");
+                    put("decisionDate", "Ngày quyết định");
+                }}
     );
 }
