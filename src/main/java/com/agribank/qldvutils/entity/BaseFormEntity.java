@@ -8,6 +8,8 @@ import org.hibernate.annotations.Comment;
 
 import java.sql.Date;
 import java.sql.Timestamp;
+import java.util.Collections;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 @Data
@@ -43,13 +45,15 @@ public class BaseFormEntity<T> {
     @Column(name = "updated_at")
     Timestamp updatedAt;
 
-    public static Map<String, String> BASE_FIELD_MAP = Map.of(
-            "decisionCommittee", "Cấp ủy quyết định",
-            "conclusionNumber", "Số Kết luận/Nghị quyết",
-            "conclusionDate", "Ngày Kết luận/Nghị quyết",
-            "decisionNumber", "Số Quyết định",
-            "decisionDate", "Ngày Quyết định",
-            "effectiveDate", "Ngày hiệu lực"
+    public static final Map<String, String> BASE_FIELD_MAP = Collections.unmodifiableMap(
+            new LinkedHashMap<>() {{
+                put("decisionCommittee", "Cấp ủy quyết định");
+                put("conclusionNumber", "Số Kết luận/Nghị quyết");
+                put("conclusionDate", "Ngày Kết luận/Nghị quyết");
+                put("decisionNumber", "Số Quyết định");
+                put("decisionDate", "Ngày Quyết định");
+                put("effectiveDate", "Ngày hiệu lực");
+            }}
     );
 
     @PrePersist
