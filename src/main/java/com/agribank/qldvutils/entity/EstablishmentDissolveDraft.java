@@ -7,6 +7,8 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.hibernate.annotations.Comment;
 
+import java.util.Collections;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 @EqualsAndHashCode(callSuper = true)
@@ -32,9 +34,12 @@ public class EstablishmentDissolveDraft extends BaseFormEntity<String>{
     @Column(name = "approved_by")
     String approvedBy;
 
-    public static Map<String, String> FIELD_MAP = Map.of(
-            "organizationCode", "Mã chi, đảng bộ",
-            "name", "Tên chi, đảng bộ",
-            "form", "Hình thức chi, đảng bộ"
+    public static Map<String, String> FIELD_MAP = Collections.unmodifiableMap(
+            new LinkedHashMap<>() {
+                {
+                    put("organizationCode", "Mã chi, đảng bộ");
+                    put("name", "Tên chi, đảng bộ");
+                    put("form", "Hình thức chi, đảng bộ");
+                }}
     );
 }

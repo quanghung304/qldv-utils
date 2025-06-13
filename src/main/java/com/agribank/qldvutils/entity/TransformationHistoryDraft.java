@@ -7,6 +7,8 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.hibernate.annotations.Comment;
 
+import java.util.Collections;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 @Data
@@ -37,11 +39,14 @@ public class TransformationHistoryDraft extends BaseFormEntity<String> {
     @Comment("0: pending, 1: da duyet, 2: huy bo")
     Integer status;
 
-    public static Map<String, String> FIELD_MAP = Map.of(
-            "organizationCode", "Mã chi, đảng bộ",
-            "oldName", "Tên chi, đảng bộ trước khi nâng cấp/hạ cấp",
-            "oldForm", "Hình thức chi, đảng bộ trước khi nâng cấp/hạ cấp",
-            "newName", "Tên chi, đảng bộ sau khi nâng cấp/hạ cấp",
-            "newForm", "Hình thức chi, đảng bộ sau khi nâng cấp/hạ cấp"
+    public static Map<String, String> FIELD_MAP = Collections.unmodifiableMap(
+            new LinkedHashMap<>() {
+                {
+                    put("organizationCode", "Mã chi, đảng bộ");
+                    put(  "oldName", "Tên chi, đảng bộ trước khi nâng cấp/hạ cấp");
+                    put( "oldForm", "Hình thức chi, đảng bộ trước khi nâng cấp/hạ cấp");
+                    put("newName", "Tên chi, đảng bộ sau khi nâng cấp/hạ cấp");
+                    put("newForm", "Hình thức chi, đảng bộ sau khi nâng cấp/hạ cấp");
+                }}
     );
 }

@@ -8,7 +8,9 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.hibernate.annotations.Comment;
 
+import java.util.Collections;
 import java.util.Date;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 import static java.util.Map.entry;
@@ -168,52 +170,54 @@ public class DV extends BaseEntity<String>{
     @Column(name = "approved_by")
     String approvedBy;
 
-    public static Map<String, String> FIELD_MAP = Map.ofEntries(
-            entry("organizationCode", "Mã chi, đảng bộ"),
-            entry("resumeNumber", "Số lý lịch"),
-            entry("partyCardNumber", "Số thẻ đảng viên"),
-            entry("vneid", "Số CCCD"),
-            entry("fullName", "Họ tên khai sinh"),
-            entry("gender", "Giới tính"),
-            entry("usingName", "Họ tên đang dùng"),
-            entry("birthday", "Ngày sinh"),
-            entry("birthPlace", "Nơi sinh"),
-            entry("hometown", "Quê quán"),
-            entry("permanentResidence", "Nơi đăng ký hộ khẩu thường trú"),
-            entry("temporaryResidence", "Nơi đăng ký tạm trú hiện nay"),
-            entry("ethnic", "Dân tộc"),
-            entry("religion", "Tôn giáo"),
-            entry("familyComposition", "Thành phần gia đình"),
-            entry("martyrsFamily", "Gia đình liệt sĩ"),
-            entry("revolution", "Gia đình có công với cách mạng"),
-            entry("socialComposition", "Thành phần xã hội khi vào đảng"),
-            entry("mainJob", "Công việc chính đang làm"),
-            entry("admissionDate", "Ngày kết nạp đảng"),
-            entry("sourceRecruitment", "Nguồn kết nạp đảng"),
-            entry("branchPartyCode", "Kết nạp tại chi bộ"),
-            entry("suggestionUnion", "Công đoàn giới thiệu"),
-            entry("suggestionYouthUnion", "Đoàn thanh niên giới thiệu"),
-            entry("referrer1", "Người giới thiệu thứ nhất"),
-            entry("jobPosition1", "Chức vụ, đơn vị của người giới thiệu 1"),
-            entry("referrer2", "Người giới thiệu thứ hai"),
-            entry("jobPosition2", "Chức vụ, đơn vị của người giới thiệu 2"),
-            entry("officialRecognitionDay", "Ngày công nhận chính thức"),
-            entry("recruitAnotherOrganization", "Tuyển dụng, tham gia tổ chức khác"),
-            entry("agriRecruitDate", "Ngày được tuyển dụng làm cán bộ Agribank"),
-            entry("recruitBrcd", "'Đơn vị/Chi nhánh tuyển dụng"),
-            entry("youthUnionJoinDate", "Ngày vào Đoàn"),
-            entry("otherSocialOrganization", "Tên tổ chức xã hội khác tham gia"),
-            entry("enlistmentDate", "Ngày nhập ngũ"),
-            entry("dischargeDate", "Ngày xuất ngũ"),
-            entry("disabledType", "Loại thương binh"),
-            entry("politicalIssue", "Có vấn đề lịch sử chính trị"),
-            entry("oldRegime", "Bản thân có làm việc trong chế độ cũ"),
-            entry("formerWorker", "Xuất thân là công nhân"),
-            entry("foreignMarriage", "Kết hôn với người nước ngoài"),
-            entry("foreignRelated", "Có liên quan đến yếu tố nước ngoài"),
-            entry("degree", "Trình độ"),
-            entry("education", "Học vấn phổ thông"),
-            entry("healthCondition", "Tình trạng sức khỏe"),
-            entry("dateOfDeath", "Ngày từ trần")
+    public static Map<String, String> FIELD_MAP = Collections.unmodifiableMap(new LinkedHashMap<>() {
+        {
+            put("organizationCode", "Mã chi, đảng bộ");
+            put("resumeNumber", "Số lý lịch");
+            put("partyCardNumber", "Số thẻ đảng viên");
+            put("vneid", "Số CCCD");
+            put("fullName", "Họ tên khai sinh");
+            put("gender", "Giới tính");
+            put("usingName", "Họ tên đang dùng");
+            put("birthday", "Ngày sinh");
+            put("birthPlace", "Nơi sinh");
+            put("hometown", "Quê quán");
+            put("permanentResidence", "Nơi đăng ký hộ khẩu thường trú");
+            put("temporaryResidence", "Nơi đăng ký tạm trú hiện nay");
+            put("ethnic", "Dân tộc");
+            put("religion", "Tôn giáo");
+            put("familyComposition", "Thành phần gia đình");
+            put("martyrsFamily", "Gia đình liệt sĩ");
+            put("revolution", "Gia đình có công với cách mạng");
+            put("socialComposition", "Thành phần xã hội khi vào đảng");
+            put("mainJob", "Công việc chính đang làm");
+            put("admissionDate", "Ngày kết nạp đảng");
+            put("sourceRecruitment", "Nguồn kết nạp đảng");
+            put("branchPartyCode", "Kết nạp tại chi bộ");
+            put("suggestionUnion", "Công đoàn giới thiệu");
+            put("suggestionYouthUnion", "Đoàn thanh niên giới thiệu");
+            put("referrer1", "Người giới thiệu thứ nhất");
+            put("jobPosition1", "Chức vụ, đơn vị của người giới thiệu 1");
+            put("referrer2", "Người giới thiệu thứ hai");
+            put("jobPosition2", "Chức vụ, đơn vị của người giới thiệu 2");
+            put("officialRecognitionDay", "Ngày công nhận chính thức");
+            put("recruitAnotherOrganization", "Tuyển dụng, tham gia tổ chức khác");
+            put("agriRecruitDate", "Ngày được tuyển dụng làm cán bộ Agribank");
+            put("recruitBrcd", "'Đơn vị/Chi nhánh tuyển dụng");
+            put("youthUnionJoinDate", "Ngày vào Đoàn");
+            put("otherSocialOrganization", "Tên tổ chức xã hội khác tham gia");
+            put("enlistmentDate", "Ngày nhập ngũ");
+            put("dischargeDate", "Ngày xuất ngũ");
+            put("disabledType", "Loại thương binh");
+            put("politicalIssue", "Có vấn đề lịch sử chính trị");
+            put("oldRegime", "Bản thân có làm việc trong chế độ cũ");
+            put("formerWorker", "Xuất thân là công nhân");
+            put("foreignMarriage", "Kết hôn với người nước ngoài");
+            put("foreignRelated", "Có liên quan đến yếu tố nước ngoài");
+            put("degree", "Trình độ");
+            put("education", "Học vấn phổ thông");
+            put("healthCondition", "Tình trạng sức khỏe");
+            put("dateOfDeath", "Ngày từ trần");
+        }}
     );
 }

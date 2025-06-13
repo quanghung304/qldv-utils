@@ -38,5 +38,7 @@ public class PartyReinstatement extends BaseEntity<String> {
     @Column(name = "decision_date")
     @Comment("ngay quyet dinh")
     Date decisionDate;
+    @Column(name = "effective_date")
+    Date effectiveDate;
     Integer deleted;
 }

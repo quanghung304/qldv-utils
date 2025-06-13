@@ -10,6 +10,8 @@ import lombok.experimental.FieldDefaults;
 import org.hibernate.annotations.Comment;
 
 import java.sql.Date;
+import java.util.Collections;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 import static java.util.Map.entry;
@@ -41,6 +43,8 @@ public class PartyReinstatementDraft extends BaseEntity<String> {
     @Column(name = "decision_date")
     @Comment("ngay quyet dinh")
     Date decisionDate;
+    @Column(name = "effective_date")
+    Date effectiveDate;
     @Column(name = "ref_id")
     String refId;
     Integer status;
@@ -49,12 +53,17 @@ public class PartyReinstatementDraft extends BaseEntity<String> {
     @Column(name = "approved_by")
     String approvedBy;
 
-    public static Map<String, String> FIELD_MAP = Map.ofEntries(
-            entry("organizationCode", "Cấp ủy khôi phục đảng tịch"),
-            entry("staffCode", "Mã nhân viên"),
-            entry("conclusionNumber", "Số KL/NQ"),
-            entry("conclusionDate", "Ngày KL/NQ"),
-            entry("decisionNumber", "Số quyết định"),
-            entry("decisionDate", "Ngày quyết định")
+    public static Map<String, String> FIELD_MAP = Collections.unmodifiableMap(
+            new LinkedHashMap<>() {
+                {
+                    put("organizationCode", "Cấp ủy khôi phục đảng tịch");
+                    put("staffCode", "Mã nhân viên");
+                    put("conclusionNumber", "Số KL/NQ");
+                    put("conclusionDate", "Ngày KL/NQ");
+                    put("decisionNumber", "Số quyết định");
+                    put("decisionDate", "Ngày quyết định");
+                    put("effectiveDate", "Ngày hiệu lực");
+                }
+            }
     );
 }
