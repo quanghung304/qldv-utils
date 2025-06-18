@@ -32,6 +32,9 @@ public class DevelopmentPlanDetailDraft extends BaseEntity<String> {
     @Column(name="YEAR")
     Integer year;
 
+    @Column(name = "STRIVE")
+    Integer strive;
+
     @Override
     protected void onCreate() {
         super.onCreate();
@@ -47,6 +50,7 @@ public class DevelopmentPlanDetailDraft extends BaseEntity<String> {
             put("target", "Chỉ tiêu");
             put("min", "Tối thiểu");
             put("year", "Năm");
+            put("strive", "Phấn đấu");
         }}
     );
 }

@@ -28,6 +28,9 @@ public class DevelopmentPlanDetail extends BaseEntity<String> {
     @Column(name="YEAR")
     Integer year;
 
+    @Column(name = "STRIVE")
+    Integer strive;
+
     @Override
     protected void onCreate() {
         super.onCreate();
