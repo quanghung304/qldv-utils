@@ -19,6 +19,7 @@ public class RequestDto {
     String formName;
     String organizationCode;
     String organizationName;
+    String staffName;
     String oldData;
     String newData;
     Date createdAt;
