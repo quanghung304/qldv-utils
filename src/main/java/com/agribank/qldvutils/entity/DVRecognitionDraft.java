@@ -40,6 +40,9 @@ public class DVRecognitionDraft extends BaseDraftEntity{
     //Ngay QD
     @Column(name = "decision_date")
     Date decisionDate;
+    //Ngay Hieu luc
+    @Column(name = "effective_date")
+    Date effectiveDate;
     @Column(name = "ref_id")
     String refId;
 
@@ -52,6 +55,7 @@ public class DVRecognitionDraft extends BaseDraftEntity{
                     put("decisionNumber", "Số quyết định");
                     put("conclusionDate", "Ngày KL/Nghị quyết");
                     put("decisionDate", "Ngày quyết định");
+                    put("effectiveDate", "Ngày hiệu lưc");
                 }}
     );
 }
