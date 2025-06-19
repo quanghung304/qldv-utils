@@ -60,7 +60,13 @@ public class TransferToAgribank extends BaseEntity<String> {
     @Column(name = "receiving_org_b_code")
     @Comment("Mã tổ chức đảng cấp B tiếp nhận")
     String receivingOrgBCode;
+    @Column(name = "receiving_org_b_name")
+    @Comment("Tên tổ chức đảng cấp B tiếp nhận")
+    String receivingOrgBName;
     @Column(name = "receiving_org_c_code")
     @Comment("Mã tổ chức đảng cấp C tiếp nhận")
     String receivingOrgCCode;
+    @Column(name = "receiving_org_c_name")
+    @Comment("Tên tổ chức đảng cấp C tiếp nhận")
+    String receivingOrgCName;
 }
