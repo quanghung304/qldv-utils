@@ -33,6 +33,9 @@ public class DVRecognition extends BaseEntity<String>{
     //Ngay QD
     @Column(name = "decision_date")
     Date decisionDate;
+    //Ngay Hieu luc
+    @Column(name = "effective_date")
+    Date effectiveDate;
     @Builder.Default
     Integer deleted = 0;
 }
