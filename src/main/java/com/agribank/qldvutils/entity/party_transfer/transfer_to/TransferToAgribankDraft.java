@@ -60,9 +60,15 @@ public class TransferToAgribankDraft extends BaseDraftEntity {
     @Column(name = "receiving_org_b_code")
     @Comment("Mã tổ chức đảng cấp B tiếp nhận")
     String receivingOrgBCode;
+    @Column(name = "receiving_org_b_name")
+    @Comment("Tên tổ chức đảng cấp B tiếp nhận")
+    String receivingOrgBName;
     @Column(name = "receiving_org_c_code")
     @Comment("Mã tổ chức đảng cấp C tiếp nhận")
     String receivingOrgCCode;
+    @Column(name = "receiving_org_c_name")
+    @Comment("Tên tổ chức đảng cấp C tiếp nhận")
+    String receivingOrgCName;
 
     public static Map<String, String> FIELD_MAP = Collections.unmodifiableMap(
             new LinkedHashMap<>() {{
@@ -79,7 +85,9 @@ public class TransferToAgribankDraft extends BaseDraftEntity {
                 put("secondIntroNumber", "Số giấy giới thiệu sinh hoạt đảng");
                 put("transferDate", "Ngày chuyển đến");
                 put("receivingOrgBCode", "Mã tổ chức đảng cấp B tiếp nhận");
+                put("receivingOrgBName", "Tên tổ chức đảng cấp B tiếp nhận");
                 put("receivingOrgCCode", "Mã tổ chức đảng cấp C tiếp nhận");
+                put("receivingOrgCName", "Tên tổ chức đảng cấp C tiếp nhận");
             }}
     );
 }
