@@ -34,6 +34,9 @@ public class TransferWithinAgribankDraft extends BaseDraftEntity {
     @Column(name = "decision_number")
     @Comment("Số Quyết định chuyển công tác")
     String decisionNumber;
+    @Column(name = "expected_expiry_date")
+    @Comment("Ngày dự kiến hết hạn chuyển sinh hoạt đảng")
+    Date expectedExpiryDate;
     @Column(name = "decision_date")
     @Comment("Ngày ban hành công tác")
     Date decisionDate;
@@ -48,7 +51,7 @@ public class TransferWithinAgribankDraft extends BaseDraftEntity {
     Date dateOfProposal;
     @Column(name = "number_of_doc")
     @Comment("Số văn bản")
-    Date numberOfDoc;
+    String numberOfDoc;
     @Column(name = "committee_proposal_date")
     @Comment("Ngày tháng nam ĐUCS dđề nghị CSHĐ")
     Date committeeProposalDate;
@@ -58,9 +61,6 @@ public class TransferWithinAgribankDraft extends BaseDraftEntity {
     @Column(name = "second_intro_number")
     @Comment("Số GGT SHĐ")
     String secondIntroNumber;
-    @Column(name = "departure_reception_date")
-    @Comment("Ngày chuyển đi/ tiếp nhân")
-    Date departureReceptionDate;
     @Column(name = "transfer_date")
     @Comment("Ngày chuyển đến")
     Date transferDate;
@@ -92,12 +92,12 @@ public class TransferWithinAgribankDraft extends BaseDraftEntity {
                 put("committeeProposalDate", "Ngày tháng nam ĐUCS dđề nghị CSHĐ");
                 put("numberOfSubmission", "Số tờ trình");
                 put("secondIntroNumber", "Số GGTSHĐ");
-                put("departureReceptionDate", "Ngày chuyển đi/ tiếp nhân");
-                put("transferDate", "Ngày chuyển đến");
+                put("transferDate", "Ngày chuyển đi/ tiếp nhân");
                 put("receivingOrgBCode", "Mã tổ chức đảng cấp B tiếp nhận");
                 put("receivingOrgBName", "Tên tổ chức đảng cấp B tiếp nhận");
                 put("receivingOrgCCode", "Mã tổ chức đảng cấp C tiếp nhận");
                 put("receivingOrgCName", "Tên tổ chức đảng cấp C tiếp nhận");
+                put("expectedExpiryDate", "Ngày dự kiến hết hạn chuyển sinh hoạt đảng");
             }}
     );
 }
