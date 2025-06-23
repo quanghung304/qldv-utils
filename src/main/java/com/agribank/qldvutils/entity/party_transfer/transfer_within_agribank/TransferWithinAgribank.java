@@ -45,7 +45,7 @@ public class TransferWithinAgribank extends BaseEntity<String> {
     Date dateOfProposal;
     @Column(name = "number_of_doc")
     @Comment("Số văn bản")
-    Date numberOfDoc;
+    String numberOfDoc;
     @Column(name = "committee_proposal_date")
     @Comment("Ngày tháng nam ĐUCS dđề nghị CSHĐ")
     Date committeeProposalDate;
@@ -55,9 +55,9 @@ public class TransferWithinAgribank extends BaseEntity<String> {
     @Column(name = "second_intro_number")
     @Comment("Số GGT SHĐ")
     String secondIntroNumber;
-    @Column(name = "departure_reception_date")
-    @Comment("Ngày chuyển đi/ tiếp nhân")
-    Date departureReceptionDate;
+    @Column(name = "expected_expiry_date")
+    @Comment("Ngày dự kiến hết hạn chuyển sinh hoạt đảng")
+    Date expectedExpiryDate;
     @Column(name = "transfer_date")
     @Comment("Ngày chuyển đến")
     Date transferDate;
