@@ -1,5 +1,6 @@
-package com.agribank.qldvutils.entity;
+package com.agribank.qldvutils.entity.form02.updown;
 
+import com.agribank.qldvutils.entity.BaseFormEntity;
 import com.agribank.qldvutils.enums.Constants;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
