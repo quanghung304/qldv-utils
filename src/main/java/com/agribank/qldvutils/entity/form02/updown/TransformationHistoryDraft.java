@@ -1,5 +1,6 @@
-package com.agribank.qldvutils.entity;
+package com.agribank.qldvutils.entity.form02.updown;
 
+import com.agribank.qldvutils.entity.BaseFormEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -31,6 +32,9 @@ public class TransformationHistoryDraft extends BaseFormEntity<String> {
     String newName;
     @Column(name = "new_form")
     String newForm;
+    @Column(name = "history_id")
+    @Comment("khoa ngoai toi bang qldv_transformation_history")
+    String historyId;
 
     @Comment("ma can bo thuc hien")
     String createdBy;
