@@ -2,13 +2,10 @@ package com.agribank.qldvutils.dto;
 
 import com.agribank.qldvutils.entity.party_transfer.transfer_temporary.TransferTemporary;
 import com.agribank.qldvutils.enums.EDecisionIssuingUnit;
-import jakarta.persistence.Column;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.Comment;
+
 
 import java.util.Date;
 
@@ -16,6 +13,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 public class TransferTemporaryDto {
+    String id;
     String staffCode;
     String fullName;
     String processId;
@@ -42,6 +40,7 @@ public class TransferTemporaryDto {
     String organizationCode;
 
     public TransferTemporaryDto(TransferTemporary transferTemporary, String organizationCode){
+        this.id = transferTemporary.getId();
         this.staffCode = transferTemporary.getStaffCode();
         this.fullName = transferTemporary.getFullName();
         this.processId = transferTemporary.getProcessId();
