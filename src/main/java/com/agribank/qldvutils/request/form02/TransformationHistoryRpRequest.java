@@ -1,4 +1,4 @@
-package com.agribank.qldvutils.request.transformation_history;
+package com.agribank.qldvutils.request.form02;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;
