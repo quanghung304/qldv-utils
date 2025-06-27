@@ -12,4 +12,5 @@ import lombok.experimental.FieldDefaults;
 public class UpdownOrganizationFilterRequest extends PagingRequest {
     Integer type;
     String organizationCode;
+    String organizationName;
 }
