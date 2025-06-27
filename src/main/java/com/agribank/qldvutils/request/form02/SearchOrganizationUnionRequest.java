@@ -6,11 +6,11 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.FieldDefaults;
 
-@EqualsAndHashCode(callSuper = true)
 @Data
+@EqualsAndHashCode(callSuper = true)
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class UpdownOrganizationFilterRequest extends PagingRequest {
-    Integer type;
+public class SearchOrganizationUnionRequest extends PagingRequest {
     String organizationCode;
+    Integer type;
     String organizationName;
 }
