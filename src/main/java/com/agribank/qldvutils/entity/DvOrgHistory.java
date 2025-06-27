@@ -6,6 +6,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+import org.hibernate.annotations.Comment;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
@@ -22,4 +23,7 @@ public class DvOrgHistory extends BaseEntity<String> {
     String oldOrgCode;
     @Column(name = "new_org_code")
     String newOrgCode;
+    @Column(name = "reference_id")
+    @Comment("refer toi bang qldv_organization_merge")
+    String refId;
 }
