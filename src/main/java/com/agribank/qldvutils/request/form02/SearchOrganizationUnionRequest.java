@@ -12,4 +12,5 @@ import lombok.experimental.FieldDefaults;
 public class SearchOrganizationUnionRequest extends PagingRequest {
     String organizationCode;
     Integer type;
+    String organizationName;
 }
