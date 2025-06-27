@@ -31,6 +31,8 @@ public class OrganizationMergeDraft extends BaseFormDraftEntity {
     String form;
     @Comment("4: sap nhap, 5: hop nhat")
     Integer type;
+    @Column(name = "ref_id")
+    String refId;
 
     public static Map<String, String> FIELD_MAP_MERGE = Collections.unmodifiableMap(
             new LinkedHashMap<>() {{
