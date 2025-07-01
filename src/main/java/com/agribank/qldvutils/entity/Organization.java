@@ -49,6 +49,7 @@ public class Organization extends BaseCodeEntity{
     @Override
     protected void onCreate() {
         super.onCreate();
+        status = "Y";
     }
 
     @Override
