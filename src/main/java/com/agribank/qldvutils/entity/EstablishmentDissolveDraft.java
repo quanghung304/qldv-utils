@@ -33,6 +33,8 @@ public class EstablishmentDissolveDraft extends BaseFormEntity<String>{
     String createdBy;
     @Column(name = "approved_by")
     String approvedBy;
+    @Column(name = "ref_id")
+    String refId;
 
     public static Map<String, String> FIELD_MAP = Collections.unmodifiableMap(
             new LinkedHashMap<>() {
