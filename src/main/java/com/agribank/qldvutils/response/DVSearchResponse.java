@@ -7,6 +7,7 @@ import lombok.experimental.FieldDefaults;
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class DVSearchResponse {
+    String id;
     String staffCode;
     String fullname;
     String organizationCode;
