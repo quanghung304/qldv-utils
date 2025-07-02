@@ -24,4 +24,7 @@ public class OrganizationSplitDraft extends BaseFormDraftEntity {
     String oldCode;
     @Column(name = "old_name")
     String oldName;
+    //Khoa ngoai den bang OrganizationSplit truong hop Sua
+    @Column(name = "ref_id")
+    String refId;
 }

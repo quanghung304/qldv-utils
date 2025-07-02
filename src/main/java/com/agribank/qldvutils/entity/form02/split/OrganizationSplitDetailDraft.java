@@ -20,6 +20,7 @@ import java.util.Map;
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class OrganizationSplitDetailDraft extends BaseEntity<String> {
+    //Khoa ngoai toi bang
     @Column(name = "split_id")
     String splitId;
     @Column(name = "new_code")

@@ -16,6 +16,7 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class OrganizationSplitDetail extends BaseEntity<String> {
+    //Khoa ngoai toi bang OrganizationSplit
     @Column(name = "split_id")
     String splitId;
     @Column(name = "new_code")
