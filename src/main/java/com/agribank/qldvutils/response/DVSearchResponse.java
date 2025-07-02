@@ -9,7 +9,7 @@ import lombok.experimental.FieldDefaults;
 public class DVSearchResponse {
     String id;
     String staffCode;
-    String fullname;
+    String fullName;
     String organizationCode;
     String organizationName;
     String organizationBName;
