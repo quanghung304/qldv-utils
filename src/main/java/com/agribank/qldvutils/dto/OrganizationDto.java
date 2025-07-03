@@ -13,4 +13,5 @@ import lombok.experimental.FieldDefaults;
 public class OrganizationDto {
     String code;
     String name;
+    String form;
 }
