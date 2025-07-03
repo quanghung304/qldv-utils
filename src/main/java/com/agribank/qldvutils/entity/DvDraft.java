@@ -154,7 +154,12 @@ public class DvDraft extends BaseDraftEntity {
     @Column(name = "date_of_death")
     @Comment("Ngày, tháng, năm từ trần")
     String dateOfDeath;
-    @Column(name = "dv_status")
+    @Column(name = "official_recognition_day_2")
+    @Comment("ngày công nhận chin thức lần 2")
+    Date officialRecognitionDay2;
+    @Column(name = "admission_date_2")
+    @Comment("Ngày kết nạp Đảng lần 2")
+    Date admissionDate2;
 
     @Comment("0: pending, 1: phe duyet, 2: tu choi")
     private Integer status;

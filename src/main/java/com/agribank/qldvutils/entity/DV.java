@@ -80,6 +80,9 @@ public class DV extends BaseEntity<String>{
     //Ngày kết nạp Đảng
     @Column(name = "admission_date")
     Date admissionDate;
+    //Ngày kết nạp Đảng lần 2
+    @Column(name = "admission_date_2")
+    Date admissionDate2;
     //nguồn kết nạp
     @Column(name = "source_recruitment")
     @Comment("sinh viên, đảng bộ ngoài Agribank")
@@ -106,6 +109,9 @@ public class DV extends BaseEntity<String>{
     //Ngày công nhận chính thức
     @Column(name = "official_recognition_day")
     Date officialRecognitionDay;
+    //ngày công nhận chin thức lần 2
+    @Column(name = "official_recognition_day_2")
+    Date officialRecognitionDay2;
     //tham gia tổ chức khác
     @Column(name = "recruit_another_organization")
     String recruitAnotherOrganization;
@@ -192,6 +198,7 @@ public class DV extends BaseEntity<String>{
             put("socialComposition", "Thành phần xã hội khi vào đảng");
             put("mainJob", "Công việc chính đang làm");
             put("admissionDate", "Ngày kết nạp đảng");
+            put("admissionDate2", "Ngày kết nạp đảng lần 2");
             put("sourceRecruitment", "Nguồn kết nạp đảng");
             put("branchPartyCode", "Kết nạp tại chi bộ");
             put("suggestionUnion", "Công đoàn giới thiệu");
@@ -201,6 +208,7 @@ public class DV extends BaseEntity<String>{
             put("referrer2", "Người giới thiệu thứ hai");
             put("jobPosition2", "Chức vụ, đơn vị của người giới thiệu 2");
             put("officialRecognitionDay", "Ngày công nhận chính thức");
+            put("officialRecognitionDay2", "Ngày công nhận chính thức lần 2");
             put("recruitAnotherOrganization", "Tuyển dụng, tham gia tổ chức khác");
             put("agriRecruitDate", "Ngày được tuyển dụng làm cán bộ Agribank");
             put("recruitBrcd", "'Đơn vị/Chi nhánh tuyển dụng");
