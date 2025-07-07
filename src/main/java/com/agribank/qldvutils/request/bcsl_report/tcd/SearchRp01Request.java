@@ -6,6 +6,8 @@ import jakarta.validation.constraints.NotNull;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
+import java.util.Date;
+
 
 @EqualsAndHashCode(callSuper = true)
 @Data
@@ -17,4 +19,6 @@ public class SearchRp01Request extends PagingRequest {
     @NotNull(message = "Chưa chọn hình thức tổ chức Đảng")
     @NotBlank(message = "Chưa chọn hình thức tổ chứa Đảng")
     String form;
+    Date fromDate;
+    Date toDate;
 }
