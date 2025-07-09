@@ -14,11 +14,11 @@ import java.sql.Date;
 @Data
 @Builder
 @Entity
-@Table(name = "qldv_transformation_history", schema = Constants.DV_DL)
+@Table(name = "qldv_organization_updown", schema = Constants.DV_DL)
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class TransformationHistory extends BaseFormEntity<String> {
+public class OrganizationUpDown extends BaseFormEntity<String> {
     @Column(name = "organization_code")
     String organizationCode;
     @Comment("1: nang cap, 2: ha cap")
