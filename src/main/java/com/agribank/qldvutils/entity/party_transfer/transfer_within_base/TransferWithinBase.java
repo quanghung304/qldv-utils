@@ -53,4 +53,5 @@ public class TransferWithinBase extends BaseEntity<String> {
     @Column(name = "organization_name")
     @Comment("Tên đảng bộ tiếp nhận")
     String organizationName;
+
 }

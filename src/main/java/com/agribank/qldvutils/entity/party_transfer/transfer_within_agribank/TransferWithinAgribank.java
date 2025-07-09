@@ -73,6 +73,9 @@ public class TransferWithinAgribank extends BaseEntity<String> {
     @Column(name = "receiving_org_c_name")
     @Comment("Tên tổ chức đảng cấp C tiếp nhận")
     String receivingOrgCName;
+    @Column(name = "old_organization_code")
+    @Comment("Mã đảng bộ chuyển đi")
+    String oldOrganizationCode;
     @Builder.Default
     Integer deleted = 0;
 
