@@ -18,8 +18,8 @@ import java.util.Map;
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Entity
-@Table(name = "qldv_transformation_history_draft")
-public class TransformationHistoryDraft extends BaseFormEntity<String> {
+@Table(name = "qldv_org_updown_draft")
+public class OrganizationUpDownDraft extends BaseFormEntity<String> {
     @Column(name = "organization_code")
     String organizationCode;
     @Comment("1: nang cap, 2: ha cap")
@@ -33,7 +33,7 @@ public class TransformationHistoryDraft extends BaseFormEntity<String> {
     @Column(name = "new_form")
     String newForm;
     @Column(name = "history_id")
-    @Comment("khoa ngoai toi bang qldv_transformation_history")
+    @Comment("khoa ngoai toi bang qldv_organization_updown")
     String historyId;
 
     @Comment("ma can bo thuc hien")
