@@ -15,15 +15,15 @@ import org.hibernate.annotations.Comment;
 @AllArgsConstructor
 @Entity
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Table(name = "qldv_dv_org_history", schema = Constants.DV_DL)
-public class DvOrgHistory extends BaseEntity<String> {
-    @Column(name = "staff_code", unique = true, nullable = false)
+@Table(name = "qldv_dv_org_history_draft", schema = Constants.DV_DL)
+public class DvOrgHistoryDraft extends BaseEntity<String> {
+    @Column(name = "staff_code", nullable = false)
     String staffCode;
     @Column(name = "old_org_code")
     String oldOrgCode;
     @Column(name = "new_org_code")
     String newOrgCode;
     @Column(name = "reference_id")
-    @Comment("refer toi bang qldv_organization_merge || qldv_organization_split")
+    @Comment("refer toi bang qldv_org_split_draft")
     String refId;
 }
