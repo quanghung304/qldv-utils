@@ -54,4 +54,16 @@ public class TransferWithinBase extends BaseEntity<String> {
     @Comment("Tên đảng bộ tiếp nhận")
     String organizationName;
 
+    @Column(name = "old_organization_code")
+    @Comment("Mã đảng bộ nơi đi")
+    String oldOrganizationCode;
+
+    @Comment("ma can bo thuc hien")
+    @Column(name = "created_by")
+    String createdBy;
+
+    @Comment("ma can bo duyet")
+    @Column(name = "approved_by")
+    String approvedBy;
+
 }
