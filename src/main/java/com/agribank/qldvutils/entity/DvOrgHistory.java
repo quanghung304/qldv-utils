@@ -8,6 +8,8 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.hibernate.annotations.Comment;
 
+import java.util.Date;
+
 @EqualsAndHashCode(callSuper = true)
 @Data
 @Builder
@@ -17,7 +19,7 @@ import org.hibernate.annotations.Comment;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Table(name = "qldv_dv_org_history", schema = Constants.DV_DL)
 public class DvOrgHistory extends BaseEntity<String> {
-    @Column(name = "staff_code", unique = true, nullable = false)
+    @Column(name = "staff_code", nullable = false)
     String staffCode;
     @Column(name = "old_org_code")
     String oldOrgCode;
@@ -26,4 +28,8 @@ public class DvOrgHistory extends BaseEntity<String> {
     @Column(name = "reference_id")
     @Comment("refer toi bang qldv_organization_merge || qldv_organization_split")
     String refId;
+    @Column(name = "effective_date")
+    Date effectiveDate;
+    @Column(name = "action")
+    String action;
 }
