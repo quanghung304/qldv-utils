@@ -27,6 +27,14 @@ public class TransferTemporary extends BaseEntity<String> {
     @Column(name = "full_name")
     String fullName; // Ho ten dang vien
 
+    @Column(name = "organization_code")
+    @Comment("Ma chi, đảng bộ chuyển đi")
+    String organizationCode;
+
+    @Column(name = "organization_name")
+    @Comment("Tên Chi, đảng bộ chuyển đi")
+    String organizationName;
+
     @Column(name = "process_id")
     @Comment("khoa ngoai toi bang qldv_transfer_process")
     String processId;

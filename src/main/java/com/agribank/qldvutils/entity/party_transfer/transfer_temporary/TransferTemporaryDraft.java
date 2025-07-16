@@ -31,6 +31,14 @@ public class TransferTemporaryDraft extends BaseDraftEntity {
     @Column(name = "full_name")
     String fullName; // Ho ten dang vien
 
+    @Column(name = "organization_code")
+    @Comment("Ma chi, đảng bộ chuyển đi")
+    String organizationCode;
+
+    @Column(name = "organization_name")
+    @Comment("Tên Chi, đảng bộ chuyển đi")
+    String organizationName;
+
     @Column(name = "decision_number")
     @Comment("Số QĐ")
     String decisionNumber;
