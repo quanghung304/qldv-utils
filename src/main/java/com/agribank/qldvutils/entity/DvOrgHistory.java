@@ -26,7 +26,7 @@ public class DvOrgHistory extends BaseEntity<String> {
     @Column(name = "new_org_code")
     String newOrgCode;
     @Column(name = "reference_id")
-    @Comment("refer toi bang qldv_organization_merge || qldv_organization_split")
+    @Comment("refer toi bang qldv_organization_merge")
     String refId;
     @Column(name = "effective_date")
     Date effectiveDate;

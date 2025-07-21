@@ -24,7 +24,7 @@ public class OrganizationHistory extends BaseEntity<String> {
     String code;
     @Comment("ten chi, dang bo")
     String name;
-    @Comment("0: thanh lap, 1: nang cap, 2: ha cap, 3: chia tach, 4: sap nhap, 5: hop nhat, 6: giai the, 7: giai tan")
+    @Comment("0: thanh lap, 1: nang cap, 2: ha cap, 3: chia tach, 4: sap nhap, 5: hop nhat, 6: giai the, 7: giai tan, 8: chuyển giao, 9: đổi tên")
     Integer type;
     @Column(name = "ref_id")
     @Comment("khoa ngoai toi bang luu ho so tuong ung")
