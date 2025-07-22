@@ -47,10 +47,11 @@ public class OrganizationUpDownDraft extends BaseFormEntity<String> {
             new LinkedHashMap<>() {
                 {
                     put("organizationCode", "Mã chi, đảng bộ");
-                    put(  "oldName", "Tên chi, đảng bộ trước khi nâng cấp/hạ cấp");
-                    put( "oldForm", "Hình thức chi, đảng bộ trước khi nâng cấp/hạ cấp");
+                    put("oldName", "Tên chi, đảng bộ trước khi nâng cấp/hạ cấp");
+                    put("oldForm", "Hình thức chi, đảng bộ trước khi nâng cấp/hạ cấp");
                     put("newName", "Tên chi, đảng bộ sau khi nâng cấp/hạ cấp");
                     put("newForm", "Hình thức chi, đảng bộ sau khi nâng cấp/hạ cấp");
-                }}
+                }
+            }
     );
 }
