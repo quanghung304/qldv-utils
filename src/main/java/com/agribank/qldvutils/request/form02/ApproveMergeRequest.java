@@ -4,7 +4,8 @@ import com.agribank.qldvutils.entity.DV;
 import com.agribank.qldvutils.entity.DvOrgHistory;
 import com.agribank.qldvutils.entity.Organization;
 import com.agribank.qldvutils.entity.form02.OrganizationHistory;
-import com.agribank.qldvutils.entity.form02.split.OrganizationSplit;
+import com.agribank.qldvutils.entity.form02.merge.OrganizationMergeDetail;
+import com.agribank.qldvutils.entity.form02.merge.OrganizationMergeDraft;
 import com.agribank.qldvutils.entity.form02.split.OrganizationSplitDetail;
 import com.agribank.qldvutils.entity.form02.split.OrganizationSplitDraft;
 import jakarta.validation.constraints.NotNull;
@@ -18,27 +19,17 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class ApproveUpdateSplitRequest {
+public class ApproveMergeRequest {
     @NotNull
-    List<OrganizationSplitDetail> newOrganizationSplitDetails;
+    List<OrganizationMergeDetail> organizationMergeDetails;
     @NotNull
-    List<OrganizationSplitDetail> oldOrganizationSplitDetails;
+    List<Organization> mergedOrganizations;
     @NotNull
-    List<Organization> newOrganizations;
+    OrganizationMergeDraft mergeDraft;
     @NotNull
-    List<String> idOldOrganizations;
+    List<DvOrgHistory> dvOrgHistories;
     @NotNull
-    OrganizationSplit organizationSplit;
+    List<DV> mergedMembers;
     @NotNull
-    OrganizationSplitDraft splitDraft;
-    @NotNull
-    List<DvOrgHistory> newDvOrgHistories;
-    @NotNull
-    List<DvOrgHistory> oldDvOrgHistories;
-    @NotNull
-    List<DV> newDVs;
-    @NotNull
-    List<OrganizationHistory> newOrganizationHistories;
-    @NotNull
-    List<OrganizationHistory> oldOrganizationHistories;
+    List<OrganizationHistory> organizationHistories;
 }
