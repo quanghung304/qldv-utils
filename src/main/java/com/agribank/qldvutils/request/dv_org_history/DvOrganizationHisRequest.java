@@ -10,7 +10,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class DvOrgHisRequest {
+public class DvOrganizationHisRequest {
     List<String> newOrgCodes;
     String action;
     String refId;
