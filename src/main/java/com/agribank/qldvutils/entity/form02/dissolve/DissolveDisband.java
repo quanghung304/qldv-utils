@@ -23,6 +23,6 @@ public class DissolveDisband extends BaseFormEntity<String> {
     String organizationCode;
     String name;
     String form;
-    @Comment("0: thanh lap, 6: giai the")
+    @Comment("6: giai the, 7: giai tan")
     Integer type;
 }
