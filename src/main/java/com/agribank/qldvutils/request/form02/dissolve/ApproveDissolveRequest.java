@@ -1,4 +1,4 @@
-package com.agribank.qldvutils.request.form02;
+package com.agribank.qldvutils.request.form02.dissolve;
 
 import com.agribank.qldvutils.entity.form02.dissolve.DissolveDisband;
 import com.agribank.qldvutils.entity.form02.dissolve.DissolveDisbandDraft;

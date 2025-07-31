@@ -25,7 +25,7 @@ public class DissolveDisbandDraft extends BaseFormEntity<String> {
     String organizationCode;
     String name;
     String form;
-    @Comment("0: thanh lap, 6: giai the")
+    @Comment("6: giai the, 7: giai tan")
     Integer type;
 
     @Comment("0: pending, 1: da duyet, 2: huy bo")
