@@ -1,5 +1,6 @@
-package com.agribank.qldvutils.entity;
+package com.agribank.qldvutils.entity.form02.dissolve;
 
+import com.agribank.qldvutils.entity.BaseFormEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -18,8 +19,8 @@ import java.util.Map;
 @AllArgsConstructor
 @Entity
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Table(name = "qldv_establishment_dissolve_draft")
-public class EstablishmentDissolveDraft extends BaseFormEntity<String>{
+@Table(name = "qldv_dissolve_disband_draft")
+public class DissolveDisbandDraft extends BaseFormEntity<String> {
     @Column(name = "organization_code")
     String organizationCode;
     String name;

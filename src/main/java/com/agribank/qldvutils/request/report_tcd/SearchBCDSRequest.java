@@ -12,7 +12,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class SearchRequest extends PagingRequest {
+public class SearchBCDSRequest extends PagingRequest {
     String code;
     Date fromDate;
     Date toDate;

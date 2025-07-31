@@ -1,7 +1,7 @@
 package com.agribank.qldvutils.request.form02;
 
-import com.agribank.qldvutils.entity.EstablishmentDissolve;
-import com.agribank.qldvutils.entity.EstablishmentDissolveDraft;
+import com.agribank.qldvutils.entity.form02.dissolve.DissolveDisband;
+import com.agribank.qldvutils.entity.form02.dissolve.DissolveDisbandDraft;
 import com.agribank.qldvutils.entity.Organization;
 import com.agribank.qldvutils.entity.form02.OrganizationHistory;
 import jakarta.validation.constraints.NotNull;
@@ -17,9 +17,9 @@ public class ApproveDissolveRequest {
     @NotNull
     Organization organization;
     @NotNull
-    EstablishmentDissolve dissolve;
+    DissolveDisband dissolve;
     @NotNull
-    EstablishmentDissolveDraft draft;
+    DissolveDisbandDraft draft;
     @NotNull
     OrganizationHistory history;
 }
