@@ -1,4 +1,4 @@
-package com.agribank.qldvutils.request.report_dv;
+package com.agribank.qldvutils.request.bcsl_report.tcd;
 
 import com.agribank.qldvutils.request.PagingRequest;
 import lombok.*;
@@ -12,7 +12,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class SearchRp24Request extends PagingRequest {
+public class SearchRpRequest extends PagingRequest {
     String organizationCode;
     Date fromDate;
     Date toDate;
