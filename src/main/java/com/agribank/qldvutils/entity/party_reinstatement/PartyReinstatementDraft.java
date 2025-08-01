@@ -52,11 +52,14 @@ public class PartyReinstatementDraft extends BaseEntity<String> {
     String createdBy;
     @Column(name = "approved_by")
     String approvedBy;
+    @Column(name = "desicion_committee")
+    @Comment("cấp ủy khôi phục")
+    String decisionCommittee;
 
     public static Map<String, String> FIELD_MAP = Collections.unmodifiableMap(
             new LinkedHashMap<>() {
                 {
-                    put("organizationCode", "Cấp ủy khôi phục đảng tịch");
+                    put("decisionCommittee", "Cấp ủy khôi phục đảng tịch");
                     put("staffCode", "Mã nhân viên");
                     put("conclusionNumber", "Số KL/NQ");
                     put("conclusionDate", "Ngày KL/NQ");
