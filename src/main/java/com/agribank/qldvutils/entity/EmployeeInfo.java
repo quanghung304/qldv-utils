@@ -47,4 +47,6 @@ public class EmployeeInfo {
     String email;
     @Column(name = "IDNO")
     String idNo;
+    @Column(name = "AGBKDT")
+    String agbkdt;
 }

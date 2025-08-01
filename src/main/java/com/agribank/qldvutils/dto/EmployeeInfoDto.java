@@ -28,4 +28,5 @@ public class EmployeeInfoDto {
     String brcd;
     String vneid;
     Date admissionDate;
+    String agbkdt;
 }
