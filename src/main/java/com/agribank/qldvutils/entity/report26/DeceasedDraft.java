@@ -36,10 +36,10 @@ public class DeceasedDraft extends BaseEntity<String> {
     @Column(name = "decision_date")
     @Comment("Ngày QĐ")
     Date decisionDate;
-    @Column(name = "username_created")
-    String usernameCreated;
-    @Column(name = "username_accepted")
-    String usernameAccepted;
+    @Column(name = "created_by")
+    String createdBy;
+    @Column(name = "approved_by")
+    String approvedBy;
     @Column(name = "ref_id")
     @Comment("id của report_26")
     String refId;
