@@ -52,12 +52,12 @@ public class MembershipProposalDraft extends BaseEntity<String>{
                 {
                     put("organizationCode", "Mã chi, đảng bộ");
                     put( "staffCode", "Mã nhân viên");
+                    put("fullName", "Họ tên");
                     put("reason", "Lý do kết nạp lần 2");
                     put( "resolutionNumber", "Số kết luận nghị quyết");
                     put( "resolutionDate", "Ngày kết luận nghị quyết");
                     put( "decisionNumber", "Số quyết định");
                     put("decisionDate", "Ngày quyết định");
-                    put("fullName", "Họ tên");
                 }}
     );
 }
