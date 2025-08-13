@@ -28,4 +28,5 @@ public class RequestDto {
     String approver;
     Integer status;
     String deniedReason;
+    String referenceId;
 }
