@@ -9,7 +9,8 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.hibernate.annotations.Comment;
 
-import java.sql.Date;
+import java.util.Date;
+
 
 @EqualsAndHashCode(callSuper = true)
 @Data
