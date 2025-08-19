@@ -61,15 +61,15 @@ public class LeavePartyDraft extends BaseEntity<String> {
     public static Map<String, String> FIELD_MAP = Collections.unmodifiableMap(
             new LinkedHashMap<>() {
                 {
-                    put("committeeDecision", "Cấp ủy quyết định");
-                    put("effectiveDate", "Ngày hiệu lực");
-                    put("reason", "Lý do");
-                    put("organizationCode", "Mã chi, đảng bộ");
                     put("staffCode", "Mã nhân viên");
-                    put("decisionNumber", "Số quyết định");
-                    put("decisionDate", "Ngày quyết định");
+                    put("organizationCode", "Mã chi, đảng bộ");
+                    put("reason", "Lý do");
+                    put("committeeDecision", "Cấp ủy quyết định");
                     put("resolutionNumber", "Số kết luận/nghị quyết");
                     put("resolutionDate", "Ngày kết luận/nghị quyết");
+                    put("decisionNumber", "Số quyết định");
+                    put("decisionDate", "Ngày quyết định");
+                    put("effectiveDate", "Ngày hiệu lực");
                 }}
     );
 
