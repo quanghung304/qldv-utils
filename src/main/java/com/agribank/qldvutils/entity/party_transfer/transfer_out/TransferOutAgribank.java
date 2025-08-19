@@ -41,13 +41,13 @@ public class TransferOutAgribank extends BaseEntity<String> {
     String issuingOrganization;
     @Column(name = "org_c_propose_date")
     @Comment("Ngày, tháng, năm chi bộ đề nghị CSHĐ")
-    String orgCProposeDate;
+    Date orgCProposeDate;
     @Column(name = "org_c_propose_number")
     @Comment("Số văn bản")
     String orgCProposeNumber;
     @Column(name = "org_b_propose_date")
     @Comment("Ngày, tháng, năm ĐUCS đề nghị CSHĐ")
-    String orgBProposeDate;
+    Date orgBProposeDate;
     @Column(name = "org_b_propose_number")
     @Comment("Số tờ trình")
     String orgBProposeNumber;
