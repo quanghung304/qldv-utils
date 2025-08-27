@@ -3,7 +3,8 @@ package com.agribank.qldvutils.response.party_reinstatement;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
-import java.sql.Date;
+import java.util.Date;
+
 
 @Data
 @Builder
