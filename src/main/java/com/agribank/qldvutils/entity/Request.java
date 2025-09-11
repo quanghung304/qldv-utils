@@ -22,6 +22,9 @@ public class Request extends BaseEntity<String> {
     String organizationCode;
     @Column(name = "staff_code")
     String staffCode;
+    @Comment("dung trong truong hop tao yeu cau cho cac dang vien moi chua co trong bang QLDV_DV")
+    @Column(name = "staff_name")
+    String staffName;
     @Column(name = "form_code")
     String formCode;
     @Column(name = "form_name")
