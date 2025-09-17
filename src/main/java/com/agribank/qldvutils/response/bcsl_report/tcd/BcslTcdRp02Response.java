@@ -16,4 +16,5 @@ public class BcslTcdRp02Response {
     Integer upgrade;
     Integer downgrade;
     Integer dissolve;
+    Integer disband;
 }
