@@ -1,7 +1,6 @@
 package com.agribank.qldvutils.entity.form02.split;
 
 import com.agribank.qldvutils.entity.BaseEntity;
-import com.agribank.qldvutils.enums.Constants;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -11,7 +10,7 @@ import lombok.experimental.FieldDefaults;
 @Data
 @Builder
 @Entity
-@Table(name = "qldv_org_split_details", schema = Constants.DV_DL)
+@Table(name = "qldv_org_split_details")
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)

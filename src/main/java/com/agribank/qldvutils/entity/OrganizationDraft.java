@@ -1,6 +1,5 @@
 package com.agribank.qldvutils.entity;
 
-import com.agribank.qldvutils.enums.Constants;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -12,8 +11,6 @@ import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import static java.util.Map.entry;
-
 @EqualsAndHashCode(callSuper = true)
 @Data
 @Builder
@@ -21,7 +18,7 @@ import static java.util.Map.entry;
 @AllArgsConstructor
 @Entity
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Table(name = "qldv_organization_draft", schema = Constants.DV_DL)
+@Table(name = "qldv_organization_draft")
 public class OrganizationDraft extends BaseEntity<String> {
     String code;
     @Column(name = "organization_code")

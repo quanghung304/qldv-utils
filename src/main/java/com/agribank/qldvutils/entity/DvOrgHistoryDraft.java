@@ -1,6 +1,5 @@
 package com.agribank.qldvutils.entity;
 
-import com.agribank.qldvutils.enums.Constants;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -15,7 +14,7 @@ import org.hibernate.annotations.Comment;
 @AllArgsConstructor
 @Entity
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Table(name = "qldv_dv_org_history_draft", schema = Constants.DV_DL)
+@Table(name = "qldv_dv_org_history_draft")
 public class DvOrgHistoryDraft extends BaseEntity<String> {
     @Column(name = "staff_code", nullable = false)
     String staffCode;

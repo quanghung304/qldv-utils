@@ -1,7 +1,6 @@
 package com.agribank.qldvutils.entity.party_reinstatement;
 
 import com.agribank.qldvutils.entity.BaseEntity;
-import com.agribank.qldvutils.enums.Constants;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -19,7 +18,7 @@ import java.util.Date;
 @AllArgsConstructor
 @Entity
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Table(name = "qldv_party_reinstatement", schema = Constants.DV_DL)
+@Table(name = "qldv_party_reinstatement")
 public class PartyReinstatement extends BaseEntity<String> {
     @Column(name = "organization_code")
     @Comment("Mã Tổ chức Đảng")

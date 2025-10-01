@@ -1,7 +1,6 @@
 package com.agribank.qldvutils.entity.form02.transfer;
 
 import com.agribank.qldvutils.entity.BaseFormEntity;
-import com.agribank.qldvutils.enums.Constants;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -14,7 +13,7 @@ import org.hibernate.annotations.Comment;
 @Data
 @Builder
 @Entity
-@Table(name = "qldv_party_organization_transfer", schema = Constants.DV_DL)
+@Table(name = "qldv_party_organization_transfer")
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)

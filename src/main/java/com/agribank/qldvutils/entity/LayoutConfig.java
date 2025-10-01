@@ -1,6 +1,5 @@
 package com.agribank.qldvutils.entity;
 
-import com.agribank.qldvutils.enums.Constants;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -9,7 +8,6 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.sql.Timestamp;
-import java.util.Date;
 
 @Data
 @Builder
@@ -17,7 +15,7 @@ import java.util.Date;
 @AllArgsConstructor
 @Entity
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Table(name = "QLDV_LAYOUTCONFIG", schema = Constants.DV_DL)
+@Table(name = "QLDV_LAYOUTCONFIG")
 public class LayoutConfig {
     @Id
     @Column(name = "id")

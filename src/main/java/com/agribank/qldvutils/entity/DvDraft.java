@@ -1,6 +1,5 @@
 package com.agribank.qldvutils.entity;
 
-import com.agribank.qldvutils.enums.Constants;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -17,7 +16,7 @@ import java.util.Date;
 @AllArgsConstructor
 @Entity
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Table(name = "qldv_dv_draft", schema = Constants.DV_DL)
+@Table(name = "qldv_dv_draft")
 public class DvDraft extends BaseDraftEntity {
     @Column(name = "staff_code")
     String staffCode;
