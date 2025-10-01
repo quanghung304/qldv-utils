@@ -1,10 +1,8 @@
 package com.agribank.qldvutils.entity;
 
-import com.agribank.qldvutils.enums.Constants;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
-
 
 @EqualsAndHashCode(callSuper = true)
 @Data
@@ -13,7 +11,7 @@ import lombok.experimental.FieldDefaults;
 @Entity
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Table(name = "qldv_api_log", schema = Constants.DV_DL)
+@Table(name = "qldv_api_log")
 public class ApiLog extends BaseEntity<String> {
     String username;
     @Column(name = "user_email")

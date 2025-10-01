@@ -1,7 +1,6 @@
 package com.agribank.qldvutils.entity.form02.merge;
 
 import com.agribank.qldvutils.entity.base.BaseFormDraftEntity;
-import com.agribank.qldvutils.enums.Constants;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -16,7 +15,7 @@ import java.util.Map;
 @Data
 @Builder
 @Entity
-@Table(name = "qldv_org_merge_draft", schema = Constants.DV_DL)
+@Table(name = "qldv_org_merge_draft")
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)

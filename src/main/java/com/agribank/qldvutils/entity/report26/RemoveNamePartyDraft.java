@@ -13,8 +13,6 @@ import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import static java.util.Map.entry;
-
 @EqualsAndHashCode(callSuper = true)
 @Data
 @Entity

@@ -1,12 +1,10 @@
 package com.agribank.qldvutils.entity;
 
-import com.agribank.qldvutils.enums.Constants;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
-import org.hibernate.annotations.Comment;
 
 import java.util.Collections;
 import java.util.Date;
@@ -20,7 +18,7 @@ import java.util.Map;
 @AllArgsConstructor
 @Entity
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Table(name = "qldv_recognition_draft", schema = Constants.DV_DL)
+@Table(name = "qldv_recognition_draft")
 public class DVRecognitionDraft extends BaseDraftEntity{
     //Ma can bo
     @Column(name = "staff_code")

@@ -1,7 +1,6 @@
 package com.agribank.qldvutils.entity.form02;
 
 import com.agribank.qldvutils.entity.BaseEntity;
-import com.agribank.qldvutils.enums.Constants;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -18,7 +17,7 @@ import java.util.Date;
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Entity
-@Table(name = "qldv_organization_history", schema = Constants.DV_DL)
+@Table(name = "qldv_organization_history")
 public class OrganizationHistory extends BaseEntity<String> {
     String code;
     @Comment("ten chi, dang bo")

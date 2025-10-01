@@ -1,7 +1,6 @@
 package com.agribank.qldvutils.entity.party_transfer.transfer_temporary;
 
 import com.agribank.qldvutils.entity.BaseEntity;
-import com.agribank.qldvutils.enums.Constants;
 import com.agribank.qldvutils.enums.EDecisionIssuingUnit;
 import jakarta.persistence.*;
 import lombok.*;
@@ -14,7 +13,7 @@ import java.util.Date;
 @Data
 @Builder
 @Entity
-@Table(name = "qldv_transfer_temporary", schema = Constants.DV_DL)
+@Table(name = "qldv_transfer_temporary")
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
