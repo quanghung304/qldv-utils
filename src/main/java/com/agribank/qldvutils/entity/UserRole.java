@@ -13,7 +13,7 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @Entity
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Table(name = "QLDV_USER_ROLE")
+@Table(name = "PMDV_USER_ROLE")
 public class UserRole {
     @Id
     @Column(name = "ID")

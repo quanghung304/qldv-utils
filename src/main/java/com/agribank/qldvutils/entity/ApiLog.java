@@ -11,7 +11,7 @@ import lombok.experimental.FieldDefaults;
 @Entity
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Table(name = "qldv_api_log")
+@Table(name = "pmdv_api_log")
 public class ApiLog extends BaseEntity<String> {
     String username;
     @Column(name = "user_email")

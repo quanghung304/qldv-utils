@@ -14,7 +14,7 @@ import lombok.experimental.FieldDefaults;
 @Entity
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Table(name = "qldv_import_file_config_detail")
+@Table(name = "pmdv_import_file_config_detail")
 public class ImportFileConfigDetail extends BaseEntity<String> {
     @Column(name = "ref_id")
     String refId;

@@ -13,7 +13,7 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @Entity
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Table(name = "qldv_excel_column_info")
+@Table(name = "pmdv_excel_column_info")
 public class ExcelColumnInfo extends BaseEntity<String>{
     String code;
     @Column(name = "column_field")

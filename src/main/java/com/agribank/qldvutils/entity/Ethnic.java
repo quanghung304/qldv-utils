@@ -12,7 +12,7 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @Entity
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Table(name = "qldv_ethnic")
+@Table(name = "pdv_ethnic")
 public class Ethnic extends BaseEntity<String>{
     String name;
 
