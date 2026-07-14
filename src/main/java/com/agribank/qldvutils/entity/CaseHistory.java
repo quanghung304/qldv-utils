@@ -11,6 +11,8 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 
+import java.sql.Timestamp;
+
 @EqualsAndHashCode(callSuper = true)
 @Data
 @Builder
@@ -18,19 +20,31 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @Entity
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Table(name = "PMDV_ROLE")
-public class Role extends BaseEntity<String> {
-    @Column(name = "role_code")
-    String roleCode;
+@Table(name = "PMDV_CASE_HISTORY")
+public class CaseHistory extends BaseEntity<String> {
+    @Column(name = "case_id")
+    String caseId;
 
-    @Column(name = "role_name")
-    String roleName;
+    @Column(name = "from_status_id")
+    String fromStatusId;
 
-    @Column(name = "applicable_unit_type")
-    Integer applicableUnitType;
+    @Column(name = "action")
+    String action;
 
-    @Column(name = "max_count")
-    Integer maxCount;
+    @Column(name = "to_status_id")
+    String toStatusId;
+
+    @Column(name = "performed_by")
+    String performedBy;
+
+    @Column(name = "performed_role_id")
+    String performedRoleId;
+
+    @Column(name = "comment")
+    String comment;
+
+    @Column(name = "processed_at")
+    Timestamp processedAt;
 
     @Override
     protected void onCreate() {

@@ -15,7 +15,7 @@ import java.sql.Timestamp;
 @AllArgsConstructor
 @Entity
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Table(name = "QLDV_LAYOUTCONFIG")
+@Table(name = "PMDV_LAYOUTCONFIG")
 public class LayoutConfig {
     @Id
     @Column(name = "id")

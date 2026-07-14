@@ -3,10 +3,15 @@ package com.agribank.qldvutils.entity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
-import lombok.*;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
@@ -15,40 +20,50 @@ import java.util.Date;
 @AllArgsConstructor
 @Entity
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Table(name = "qldv_organization")
-public class Organization extends BaseCodeEntity{
-    String name;
-    Integer brcd;
-    //hình thức
-    String form;
-    //Mã tcd cấp trên
-    @Column(name = "parent_code")
-    String parentCode;
-    //được ủy quyền kết nạp, khai trừ
-    @Column(name = "authorized")
-    Integer authorized;
-    //Số kết luận/nghị quyết
-    @Column(name = "resolution_number")
-    String resolutionNumber;
-    //Ngày kết luận/nghị quyết
-    @Column(name = "resolution_date")
-    Date resolutionDate;
-    //Số quyết định thành lập
-    @Column(name = "establishment_decision_number")
-    String establishmentDecisionNumber;
-    //Ngày quyết định
-    @Column(name = "decision_date")
-    Date decisionDate;
-    //Ngày hiệu lực
-    @Column(name = "effective_date")
-    Date effectiveDate;
-    //trạng thái đang hoạt động, giải thể
-    String status;
+@Table(name = "PMDV_ORGANIZATION")
+public class Organization extends BaseEntity<String> {
+    @Column(name = "organization_code")
+    String organizationCode;
+
+    @Column(name = "organization_name")
+    String organizationName;
+
+    @Column(name = "organization_type_id")
+    String organizationTypeId;
+
+    @Column(name = "unit_id")
+    String unitId;
+
+    @Column(name = "parent_organization_id")
+    String parentOrganizationId;
+
+    @Column(name = "is_authorized")
+    Boolean isAuthorized;
+
+    @Column(name = "member_count")
+    Integer memberCount;
+
+    @Column(name = "committee_member_count")
+    Integer committeeMemberCount;
+
+    @Column(name = "operation_status")
+    Integer operationStatus;
+
+    @Column(name = "establish_decision_no")
+    String establishDecisionNo;
+
+    @Column(name = "establish_decision_date")
+    LocalDate establishDecisionDate;
+
+    @Column(name = "dissolve_decision_no")
+    String dissolveDecisionNo;
+
+    @Column(name = "dissolve_decision_date")
+    LocalDate dissolveDecisionDate;
 
     @Override
     protected void onCreate() {
         super.onCreate();
-        status = "Y";
     }
 
     @Override

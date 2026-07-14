@@ -18,19 +18,22 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @Entity
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Table(name = "PMDV_ROLE")
-public class Role extends BaseEntity<String> {
-    @Column(name = "role_code")
-    String roleCode;
+@Table(name = "PMDV_UNIT")
+public class Unit extends BaseEntity<String> {
+    @Column(name = "unit_code")
+    String unitCode;
 
-    @Column(name = "role_name")
-    String roleName;
+    @Column(name = "unit_name")
+    String unitName;
 
-    @Column(name = "applicable_unit_type")
-    Integer applicableUnitType;
+    @Column(name = "unit_type")
+    Integer unitType;
 
-    @Column(name = "max_count")
-    Integer maxCount;
+    @Column(name = "parent_unit_id")
+    String parentUnitId;
+
+    @Column(name = "status")
+    String status;
 
     @Override
     protected void onCreate() {

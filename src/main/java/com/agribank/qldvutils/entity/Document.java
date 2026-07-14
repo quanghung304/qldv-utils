@@ -11,6 +11,8 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 
+import java.time.LocalDate;
+
 @EqualsAndHashCode(callSuper = true)
 @Data
 @Builder
@@ -18,19 +20,31 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @Entity
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Table(name = "PMDV_ROLE")
-public class Role extends BaseEntity<String> {
-    @Column(name = "role_code")
-    String roleCode;
+@Table(name = "PMDV_DOCUMENT")
+public class Document extends BaseEntity<String> {
+    @Column(name = "case_id")
+    String caseId;
 
-    @Column(name = "role_name")
-    String roleName;
+    @Column(name = "document_type_id")
+    String documentTypeId;
 
-    @Column(name = "applicable_unit_type")
-    Integer applicableUnitType;
+    @Column(name = "document_no")
+    String documentNo;
 
-    @Column(name = "max_count")
-    Integer maxCount;
+    @Column(name = "document_date")
+    LocalDate documentDate;
+
+    @Column(name = "effective_date")
+    LocalDate effectiveDate;
+
+    @Column(name = "summary")
+    String summary;
+
+    @Column(name = "origin")
+    Integer origin;
+
+    @Column(name = "created_by")
+    String createdBy;
 
     @Override
     protected void onCreate() {
