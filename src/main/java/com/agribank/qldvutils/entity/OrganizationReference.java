@@ -1,11 +1,12 @@
 package com.agribank.qldvutils.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
-@EqualsAndHashCode(callSuper = true)
 @Data
 @Builder
 @NoArgsConstructor
@@ -13,6 +14,11 @@ import lombok.experimental.FieldDefaults;
 @Entity
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Table(name = "pmdv_organization_reference")
-public class OrganizationReference extends BaseEntity<String>{
+public class OrganizationReference {
+    @Id
+    @Column(name = "code")
+    String code;
+
+    @Column(name = "name")
     String name;
 }
