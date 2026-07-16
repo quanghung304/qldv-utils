@@ -50,8 +50,8 @@ public class Staff extends BaseEntity<String> {
     @Column(name = "qualification")
     String qualification;
 
-    @Column(name = "unit_id")
-    String unitId;
+    @Column(name = "brcd")
+    Integer brcd;
 
     @Column(name = "data_source")
     Integer dataSource;

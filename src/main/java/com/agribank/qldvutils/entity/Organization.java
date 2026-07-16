@@ -31,8 +31,8 @@ public class Organization extends BaseEntity<String> {
     @Column(name = "organization_type_id")
     String organizationTypeId;
 
-    @Column(name = "unit_id")
-    String unitId;
+    @Column(name = "brcd")
+    Integer brcd;
 
     @Column(name = "parent_organization_id")
     String parentOrganizationId;
