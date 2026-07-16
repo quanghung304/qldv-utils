@@ -30,7 +30,7 @@ public class Status extends BaseEntity<String> {
     String flowCode;
 
     @Column(name = "status_type")
-    String statusType;
+    Integer statusType;
 
     @Column(name = "is_locked")
     Boolean isLocked;
