@@ -9,10 +9,11 @@ import java.sql.Timestamp;
 
 @Data
 @MappedSuperclass
+@Access(AccessType.FIELD)
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class BaseEntity <T>{
-
+public abstract class BaseEntity <T>{
     @Id
+    @Basic
     @GeneratedValue(strategy = GenerationType.UUID)
     T id;
 

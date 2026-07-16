@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 @Data
@@ -28,4 +29,11 @@ public class UserSearchResponse {
     String organizationCodeC;
     String organizationNameB;
     String organizationNameC;
+    String userId;
+    Integer unitId;
+    String unitName;
+    String roleId;
+    String roleName;
+    String accountStatus;
+    Timestamp createdAt;
 }

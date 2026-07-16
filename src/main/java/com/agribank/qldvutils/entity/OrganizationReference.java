@@ -13,6 +13,6 @@ import lombok.experimental.FieldDefaults;
 @Entity
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Table(name = "pmdv_organization_reference")
-public class OrganizationReference extends BaseEntity{
+public class OrganizationReference extends BaseEntity<String>{
     String name;
 }

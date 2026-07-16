@@ -11,22 +11,24 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @Entity
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Table(name = "QLDV_USER")
+@Table(name = "PMDV_USER")
 public class User extends BaseEntity<String> {
-    @Column(name = "staff_code")
-    String staffCode;
-    @Column(name = "id_iam")
-    Integer idIam;
-    String username;
     @Column(name = "full_name")
     String fullName;
-    String email;
+    String username;
+    @Column(name = "auth_type")
+    String authType;
+    @Column(name = "account_status")
+    String accountStatus;
+    @Column(name = "id_iam")
+    Integer idIam;
     Integer brcd;
     @Column(name = "dep_id")
     Integer depId;
-    String phone;
-    String vneid;
-    Integer active;
+    @Column(name = "created_by")
+    String createdBy;
+    @Column(name = "staff_code")
+    String staffCode;
     Integer deleted;
 
     @Override
