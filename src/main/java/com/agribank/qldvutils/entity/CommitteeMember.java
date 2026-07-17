@@ -28,8 +28,8 @@ public class CommitteeMember {
     String organizationId;
 
     @Id
-    @Column(name = "staff_id")
-    String staffId;
+    @Column(name = "staff_code")
+    String staffCode;
 
     @Column(name = "committee_member_id")
     String committeeMemberId;
