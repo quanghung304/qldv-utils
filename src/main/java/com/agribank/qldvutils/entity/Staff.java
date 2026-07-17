@@ -53,6 +53,9 @@ public class Staff extends BaseEntity<String> {
     @Column(name = "brcd")
     Integer brcd;
 
+    @Column(name = "organization_id")
+    String organizationId;
+
     @Column(name = "data_source")
     Integer dataSource;
 
