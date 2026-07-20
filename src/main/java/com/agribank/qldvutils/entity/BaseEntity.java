@@ -13,7 +13,6 @@ import java.sql.Timestamp;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public abstract class BaseEntity <T>{
     @Id
-    @Basic
     @GeneratedValue(strategy = GenerationType.UUID)
     T id;
 

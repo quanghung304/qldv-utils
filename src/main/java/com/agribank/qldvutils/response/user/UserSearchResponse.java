@@ -29,11 +29,8 @@ public class UserSearchResponse {
     String organizationCodeC;
     String organizationNameB;
     String organizationNameC;
-    String userId;
-    Integer unitId;
-    String unitName;
     String roleId;
     String roleName;
-    String accountStatus;
+    Integer accountStatus;
     Timestamp createdAt;
 }

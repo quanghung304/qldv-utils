@@ -16,10 +16,9 @@ public class User extends BaseEntity<String> {
     @Column(name = "full_name")
     String fullName;
     String username;
-    @Column(name = "auth_type")
-    String authType;
+    String email;
     @Column(name = "account_status")
-    String accountStatus;
+    Integer accountStatus;
     @Column(name = "id_iam")
     Integer idIam;
     Integer brcd;
