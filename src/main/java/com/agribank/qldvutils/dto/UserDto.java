@@ -17,12 +17,11 @@ public class UserDto {
     String fullName;
     String email;
     Integer brcd;
-    String organizationCode;
-    String formOrganization;
     Integer depId;
     String phone;
     String vneid;
     Integer active;
     Integer deleted;
     String dvStatus;
+    String partyOrganizationId;
 }

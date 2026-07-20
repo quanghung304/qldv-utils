@@ -11,5 +11,5 @@ import java.io.Serializable;
 @AllArgsConstructor
 public class CommitteeMemberId implements Serializable {
     private String organizationId;
-    private String staffId;
+    private String staffCode;
 }
