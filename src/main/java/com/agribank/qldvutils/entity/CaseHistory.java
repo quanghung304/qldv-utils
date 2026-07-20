@@ -22,8 +22,14 @@ import java.sql.Timestamp;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Table(name = "PMDV_CASE_HISTORY")
 public class CaseHistory extends BaseEntity<String> {
-    @Column(name = "case_id")
-    String caseId;
+    /** Tên bảng hồ sơ nguồn, VD 'PMDV_CASE' — polymorphic để 1 bảng lịch sử dùng chung được cho
+     * cả module Tổ chức Đảng (PMDV_CASE) lẫn module Đảng viên sau này (VD PMDV_MEMBER_CASE). */
+    @Column(name = "entity_table")
+    String entityTable;
+
+    /** Khóa chính (id) của bản ghi hồ sơ trong bảng entity_table. */
+    @Column(name = "entity_id")
+    String entityId;
 
     @Column(name = "from_status_id")
     String fromStatusId;
@@ -40,8 +46,8 @@ public class CaseHistory extends BaseEntity<String> {
     @Column(name = "performed_role_id")
     String performedRoleId;
 
-    @Column(name = "comment")
-    String comment;
+    @Column(name = "note")
+    String note;
 
     @Column(name = "processed_at")
     Timestamp processedAt;

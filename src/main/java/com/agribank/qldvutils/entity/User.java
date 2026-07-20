@@ -11,7 +11,7 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @Entity
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Table(name = "QLDV_USER")
+@Table(name = "PMDV_USER")
 public class User extends BaseEntity<String> {
     @Column(name = "staff_code")
     String staffCode;
