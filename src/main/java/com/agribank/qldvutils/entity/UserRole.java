@@ -1,9 +1,6 @@
 package com.agribank.qldvutils.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -16,7 +13,7 @@ import lombok.experimental.FieldDefaults;
 @Table(name = "PMDV_USER_ROLE")
 public class UserRole {
     @Id
-    @Column(name = "ID")
+    @GeneratedValue(strategy = GenerationType.UUID)
     String id;
     @Column(name = "USER_ID")
     String userId;

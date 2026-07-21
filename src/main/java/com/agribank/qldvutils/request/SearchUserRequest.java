@@ -13,10 +13,9 @@ import java.util.Objects;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class SearchUserRequest extends PagingRequest {
     String name;
-    String organizationCode;
-    Integer active;
+    String organizationId;
     Integer delete;
-    Integer brcd;
+    List<Integer> brcds;
     String roleId;
     String status;
     String keyword;
