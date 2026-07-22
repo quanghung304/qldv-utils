@@ -40,9 +40,6 @@ public class Case extends BaseEntity<String> {
     @Column(name = "created_by")
     String createdBy;
 
-    @Column(name = "brcd")
-    Integer brcd;
-
     @Column(name = "completed_at")
     Timestamp completedAt;
 
