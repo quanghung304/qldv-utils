@@ -6,11 +6,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.hibernate.annotations.Comment;
 
@@ -19,18 +15,25 @@ import java.time.LocalDate;
 
 /**
  * Bảng mở rộng lưu 15 field nghiệp vụ Bước 1 của SC-02 (Thành lập TCĐ) — quan hệ 1-1 với
- * PMDV_CASE qua chính case_id (KHÔNG có id UUID riêng, không dùng BaseEntity). Không có bảng
- * ERD gốc nào cho việc này (xem mục 9 prompt_S2-04_API_SC02.md) — chọn phương án bảng mở rộng
- * riêng (thay vì JSON trong PMDV_CASE) để SC-07 (Sprint 5) tái sử dụng NGUYÊN VẸN cùng cấu trúc,
- * chỉ khác ràng buộc organization_type_id/member_count áp dụng ở service layer.
+ * PMDV_CASE qua cột {@code case_id} (unique, KHÔNG phải PK — PK là {@code id} UUID riêng kế thừa
+ * từ {@link BaseEntity}). Không có bảng ERD gốc nào cho việc này (xem mục 9
+ * prompt_S2-04_API_SC02.md) — chọn phương án bảng mở rộng riêng (thay vì JSON trong PMDV_CASE) để
+ * SC-07 (Sprint 5) tái sử dụng NGUYÊN VẸN cùng cấu trúc, chỉ khác ràng buộc
+ * organization_type_id/member_count áp dụng ở service layer.
  *
  * proposed_organization_name (field 7) đã có sẵn trên PMDV_CASE (Case.proposedOrganizationName)
  * — KHÔNG lặp lại ở đây. attachment_ids (field 15) tham chiếu qua PMDV_ATTACHMENT.case_id — cũng
  * không lưu lại ở đây.
  *
+ * Vì {@code case_id} không còn là PK, mọi chỗ tra cứu theo hồ sơ phải dùng
+ * {@code CaseEstablishmentRepository.findByCaseId(...)} (qldv-db) /
+ * {@code CaseEstablishmentClient.findByCaseId(...)} (qldv-api) — KHÔNG dùng {@code findById}
+ * (đó là tra theo id UUID riêng của bảng này, không phải case_id).
+ *
  * Mỗi field có {@code @Comment} — Hibernate sẽ sinh {@code COMMENT ON COLUMN ...} khi tạo/update
  * bảng, để xem trực tiếp trong công cụ quản trị CSDL mà không cần mở lại tài liệu SC-02.
  */
+@EqualsAndHashCode(callSuper = true)
 @Data
 @Builder
 @NoArgsConstructor
@@ -38,10 +41,9 @@ import java.time.LocalDate;
 @Entity
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Table(name = "PMDV_CASE_ESTABLISHMENT")
-public class CaseEstablishment {
-    @Id
-    @Column(name = "case_id")
-    @Comment("PK, đồng thời là FK 1-1 tới PMDV_CASE.id — KHÔNG tự sinh, gán từ Case vừa lưu")
+public class CaseEstablishment extends BaseEntity<String> {
+    @Column(name = "case_id", unique = true)
+    @Comment("FK 1-1 tới PMDV_CASE.id (unique, KHÔNG phải PK của bảng này) — gán từ Case vừa lưu")
     String caseId;
 
     @Column(name = "brcd")
@@ -100,23 +102,4 @@ public class CaseEstablishment {
     @Comment("Field 14 SC-02 — Ngày ban hành kết luận TCCT; quá 6 tháng thì cảnh báo BR-SC02-02 "
             + "(ERR-SC02-13), không chặn lưu")
     LocalDate politicalStandardConclusionDate;
-
-    @Column(name = "created_at")
-    @Comment("Thời điểm tạo bản ghi — set 1 lần lúc insert, không đổi khi update")
-    Timestamp createdAt;
-
-    @Column(name = "updated_at")
-    @Comment("Thời điểm cập nhật gần nhất — set lại mỗi lần insert/update")
-    Timestamp updatedAt;
-
-    @PrePersist
-    protected void onCreate() {
-        createdAt = new Timestamp(System.currentTimeMillis());
-        updatedAt = new Timestamp(System.currentTimeMillis());
-    }
-
-    @PreUpdate
-    protected void onUpdate() {
-        updatedAt = new Timestamp(System.currentTimeMillis());
-    }
 }
