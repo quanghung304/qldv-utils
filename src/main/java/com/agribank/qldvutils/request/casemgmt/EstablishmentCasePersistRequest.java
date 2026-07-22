@@ -17,9 +17,7 @@ import java.util.List;
  * thêm (toàn bộ validate/business rule đã chạy xong ở qldv-api TRƯỚC khi gọi xuống đây).
  *
  * {@code committeeMembers} null = không đụng tới danh sách cấp ủy dự kiến hiện có; non-null
- * (kể cả rỗng) = xóa hết rồi ghi lại đúng danh sách này. {@code attachmentIdsToLink} null/rỗng =
- * không đụng tới tệp đính kèm; non-null = gán case_id cho đúng các attachment_id này (qldv-api đã
- * xác nhận các id này tồn tại trước khi gửi xuống).
+ * (kể cả rỗng) = xóa hết rồi ghi lại đúng danh sách này.
  */
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
@@ -27,5 +25,4 @@ public class EstablishmentCasePersistRequest {
     Case caseEntity;
     CaseEstablishment establishment;
     List<CaseEstablishmentCommittee> committeeMembers;
-    List<String> attachmentIdsToLink;
 }
