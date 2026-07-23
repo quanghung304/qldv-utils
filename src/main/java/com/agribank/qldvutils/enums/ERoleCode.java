@@ -19,8 +19,8 @@ public enum ERoleCode {
     R_LD("R-LD"),
     R_QTVCS("R-QTVCS"),
     R_BPTM("R-BPTM"),
-    R_PDCS("R-PDCS"),
-    R_KSCS("R-KSCS");
+    R_KSCS("R-KSCS"),
+    R_PDCS("R-PDCS");
 
     String code;
 }
