@@ -32,4 +32,5 @@ public class CaseListItemResponse {
     Timestamp createdAt;
     Timestamp updatedAt;
     Timestamp completedAt;
+    String proposedOrganizationName;
 }
