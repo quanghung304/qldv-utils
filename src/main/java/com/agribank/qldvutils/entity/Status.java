@@ -35,6 +35,15 @@ public class Status extends BaseEntity<String> {
     @Column(name = "is_locked")
     Boolean isLocked;
 
+    @Column(name = "step_no")
+    Integer stepNo;
+
+    @Column(name = "step_code")
+    String stepCode;
+
+    @Column(name = "step_name")
+    String stepName;
+
     @Override
     protected void onCreate() {
         super.onCreate();
