@@ -34,6 +34,6 @@ public class PageDefaultResponse<T>{
         return new ResponseEntity<>(PageDefaultResponse.<T>builder()
                 .success(false)
                 .message(message)
-                .build(), HttpStatus.OK);
+                .build(), HttpStatus.BAD_REQUEST);
     }
 }
