@@ -30,6 +30,6 @@ public class DefaultListResponse<T> {
         return new ResponseEntity<>(DefaultListResponse.<T>builder()
                 .success(false)
                 .message(message)
-                .build(), HttpStatus.OK);
+                .build(), HttpStatus.BAD_REQUEST);
     }
 }
