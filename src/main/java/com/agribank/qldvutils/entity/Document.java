@@ -10,6 +10,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
+import org.hibernate.annotations.Comment;
 
 import java.time.LocalDate;
 
@@ -25,8 +26,17 @@ public class Document extends BaseEntity<String> {
     @Column(name = "case_id")
     String caseId;
 
-    @Column(name = "document_type_id")
-    String documentTypeId;
+    @Column(name = "template_id")
+    @Comment("FK PMDV_DOCUMENT_TEMPLATE.id — NULL khi văn bản này là REFERENCE nhập tay")
+    String templateId;
+
+    @Column(name = "template_code")
+    @Comment("Denormalize từ PMDV_DOCUMENT_TEMPLATE.template_code lúc sinh")
+    String templateCode;
+
+    @Column(name = "document_name")
+    @Comment("Tên văn bản tự do do chuyên viên tự gõ — BẮT BUỘC khi templateId NULL")
+    String documentName;
 
     @Column(name = "document_no")
     String documentNo;

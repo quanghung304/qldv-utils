@@ -10,6 +10,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
+import org.hibernate.annotations.Comment;
 
 import java.sql.Timestamp;
 
@@ -51,6 +52,10 @@ public class Case extends BaseEntity<String> {
 
     @Column(name = "proposed_organization_name")
     String proposedOrganizationName;
+
+    @Column(name = "btv_method")
+    @Comment("Hình thức xử lý của Ban Thường vụ Đảng ủy (1=MEETING, 2=BALLOT)")
+    Integer btvMethod;
 
     @Override
     protected void onCreate() {

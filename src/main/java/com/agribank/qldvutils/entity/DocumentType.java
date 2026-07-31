@@ -29,6 +29,12 @@ public class DocumentType extends BaseEntity<String> {
     @Column(name = "has_validity_period")
     Boolean hasValidityPeriod;
 
+    @Column(name = "module_code")
+    String moduleCode;
+
+    @Column(name = "is_active")
+    Boolean isActive;
+
     @Override
     protected void onCreate() {
         super.onCreate();
