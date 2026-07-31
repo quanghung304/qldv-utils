@@ -22,4 +22,16 @@ public enum EAuthorityLevel {
         }
         return -1;
     }
+
+    public static String getLabel(Integer id) {
+        if (id == null) {
+            return null;
+        }
+        for (EAuthorityLevel e : EAuthorityLevel.values()) {
+            if (e.id == id) {
+                return e.name();
+            }
+        }
+        return null;
+    }
 }

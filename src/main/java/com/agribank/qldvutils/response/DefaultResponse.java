@@ -1,16 +1,42 @@
 package com.agribank.qldvutils.response;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 
 @Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
-//dung cho response cua api
-public class DefaultResponse {
-    private Boolean check;
-    private String message;
+//dung chung cho giao tiep giua api va database
+public class DefaultResponse<T> {
+    public Boolean success;
+    public String message;
+    public T data;
+
+    public static <T> ResponseEntity<DefaultResponse<T>> success(T data) {
+        DefaultResponse<T> response = new DefaultResponse<T>();
+        response.success = true;
+        response.data = data;
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
+    public static <T> ResponseEntity<DefaultResponse<T>> success(String message, T data) {
+        DefaultResponse<T> response = new DefaultResponse<T>();
+        response.success = true;
+        response.message = message;
+        response.data = data;
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
+    public static <T> ResponseEntity<DefaultResponse<T>> error(String message) {
+        DefaultResponse<T> response = new DefaultResponse<T>();
+        response.success = false;
+        response.message = message;
+        return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+    }
+
+    public static <T> ResponseEntity<DefaultResponse<T>> error(String message, HttpStatus code) {
+        DefaultResponse<T> response = new DefaultResponse<T>();
+        response.success = false;
+        response.message = message;
+        return new ResponseEntity<>(response, code);
+    }
 }
