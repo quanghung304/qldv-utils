@@ -10,6 +10,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
+import org.hibernate.annotations.Comment;
 
 import java.sql.Timestamp;
 
@@ -34,14 +35,9 @@ public class Attachment extends BaseEntity<String> {
     @Column(name = "file_path")
     String filePath;
 
-    @Column(name = "file_format")
-    String fileFormat;
-
-    @Column(name = "file_size_kb")
-    Integer fileSizeKb;
-
-    @Column(name = "attachment_type")
-    String attachmentType;
+    @Column(name = "workflow_stage", nullable = false)
+    @Comment("status_code (VD 'A-01') của file TẠI THỜI ĐIỂM UPLOAD")
+    String workflowStage;
 
     @Column(name = "uploaded_by")
     String uploadedBy;
