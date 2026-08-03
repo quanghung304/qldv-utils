@@ -2,6 +2,7 @@ package com.agribank.qldvutils.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Lob;
 import jakarta.persistence.Table;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -31,6 +32,8 @@ public class AuditLog extends BaseEntity<String> {
     @Column(name = "action")
     String action;
 
+    /** Snapshot JSON dữ liệu hồ sơ trước khi xóa (BR-GL-05) — độ dài không cố định, cần CLOB. */
+    @Lob
     @Column(name = "change_detail")
     String changeDetail;
 
