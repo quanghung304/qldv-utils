@@ -14,6 +14,7 @@ import lombok.experimental.FieldDefaults;
 
 import java.sql.Timestamp;
 
+/** BR-GL-05 — nhật ký toàn hệ thống, polymorphic qua (entity_name, entity_id), xem data-model.md. */
 @EqualsAndHashCode(callSuper = true)
 @Data
 @Builder
@@ -32,7 +33,7 @@ public class AuditLog extends BaseEntity<String> {
     @Column(name = "action")
     String action;
 
-    /** Snapshot JSON dữ liệu hồ sơ trước khi xóa (BR-GL-05) — độ dài không cố định, cần CLOB. */
+    /** Độ dài không cố định (VD snapshot JSON) — cần CLOB, KHÔNG dùng VARCHAR2(255) mặc định. */
     @Lob
     @Column(name = "change_detail")
     String changeDetail;
@@ -42,9 +43,6 @@ public class AuditLog extends BaseEntity<String> {
 
     @Column(name = "performed_at")
     Timestamp performedAt;
-
-    @Column(name = "ip_address")
-    String ipAddress;
 
     @Override
     protected void onCreate() {
