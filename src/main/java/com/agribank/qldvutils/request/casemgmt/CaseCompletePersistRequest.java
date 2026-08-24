@@ -29,4 +29,6 @@ public class CaseCompletePersistRequest {
     String action;
     String performedBy;
     String performedRoleId;
+    /** Giá trị MỚI cho Case.assignedUserId sau khi hoàn thành — luôn null vì trạng thái đích (A-15/B-05) là FINAL, không còn ai cần gán tiếp (tính qua WorkflowRoleResolver, không hardcode). */
+    String assignedUserId;
 }

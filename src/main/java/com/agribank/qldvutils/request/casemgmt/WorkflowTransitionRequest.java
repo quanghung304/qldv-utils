@@ -21,4 +21,6 @@ public class WorkflowTransitionRequest {
     String performedBy;
     String performedRoleId;
     String note;
+    /** Giá trị MỚI cần gán cho Case.assignedUserId sau transition này — null nghĩa là "không còn ai cần gán tiếp" (đã tính sẵn ở WorkflowEngine, qldv-api). */
+    String assignedUserId;
 }
