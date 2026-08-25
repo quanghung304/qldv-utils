@@ -1,29 +1,44 @@
 package com.agribank.qldvutils.request.casemgmt;
 
-import com.agribank.qldvutils.entity.CommitteeMember;
-import com.agribank.qldvutils.entity.Organization;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
 
+import java.time.LocalDate;
 import java.util.List;
 
 /**
  * API-SC06-02 (POST /cases/{id}/complete) — gói toàn bộ side-effect của "Phê duyệt hoàn thành"
- * (PMDV_ORGANIZATION mới + PMDV_CASE_ORGANIZATION link TARGET + PMDV_COMMITTEE_MEMBER chính thức
- * hóa + PMDV_CASE.status_id/completed_at + PMDV_CASE_HISTORY) thành 1 lệnh gửi xuống qldv-db,
- * chạy trong ĐÚNG 1 transaction (CaseCompleteService), cùng pattern atomic multi-entity persist đã
- * dùng cho {@code EstablishmentCasePersistRequest}/{@code CaseDeletePersistRequest}. Toàn bộ
- * guard/validate (case tồn tại, role khớp rule workflow, tên tổ chức không trùng...) đã chạy xong
- * ở qldv-api TRƯỚC khi gọi xuống đây — qldv-db chỉ persist + tự gán organization_id cho
- * committeeMembers sau khi biết id của Organization vừa lưu, không tự thẩm định gì thêm.
+ * cho CẢ 6 loại nghiệp vụ (Thành lập/Giải thể/Sáp nhập/Hợp nhất/Chia tách/Đổi tên,
+ * API_HoanThanh_6LoaiNghiepVu.md) thành 1 lệnh gửi xuống qldv-db, chạy trong ĐÚNG 1 transaction
+ * ({@code CaseCompleteService}, qldv-db) — cùng pattern atomic multi-entity persist đã dùng cho
+ * {@code EstablishmentCasePersistRequest}. Toàn bộ guard/validate (case tồn tại, role khớp rule
+ * workflow, tên tổ chức không trùng, tổng member_count, phân bổ cấp ủy Chia tách...) đã chạy xong
+ * ở qldv-api TRƯỚC khi gọi xuống đây — qldv-db chỉ thực thi + tự gán id, KHÔNG tự thẩm định gì
+ * thêm, TRỪ phần duyệt cây tổ chức con để cascade giải thể (buộc phải chạy ở qldv-db vì cần lặp
+ * truy vấn DB nhiều cấp trong CÙNG 1 transaction — xem {@code CaseCompleteService}).
+ *
+ * Chỉ 1 trong 3 nhóm field dưới đây có giá trị tùy theo case_type (2 nhóm còn lại null/rỗng):
+ * - {@code newOrganizations}: Thành lập (1 phần tử) · Sáp nhập/Hợp nhất (1 phần tử) · Chia tách
+ *   (≥2 phần tử) — null/rỗng với Giải thể/Đổi tên.
+ * - {@code sourceOrganizationIdsToDissolve}: Giải thể/Sáp nhập/Hợp nhất/Chia tách (root id — qldv-db
+ *   tự duyệt xuống hết tổ chức con ĐANG Hoạt động của từng root) — null/rỗng với Thành lập/Đổi tên.
+ * - {@code renameOrganizationId}/{@code renameNewName}: CHỈ Đổi tên.
  */
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class CaseCompletePersistRequest {
     String caseId;
-    Organization organization;
-    List<CommitteeMember> committeeMembers;
+
+    List<NewOrganizationEntry> newOrganizations;
+
+    List<String> sourceOrganizationIdsToDissolve;
+    String dissolveDecisionNo;
+    LocalDate dissolveDecisionDate;
+
+    String renameOrganizationId;
+    String renameNewName;
+
     String fromStatusId;
     String toStatusId;
     String action;

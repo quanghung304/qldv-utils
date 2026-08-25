@@ -15,6 +15,10 @@ import org.hibernate.annotations.Comment;
 import java.time.LocalDate;
 
 /**
+ * Bảng mở rộng lưu Bước 1 SC-08 (API-SC08-01/02) cho 5 nghiệp vụ biến động TCĐ (Giải thể/Sáp
+ * nhập/Hợp nhất/Chia tách/Đổi tên) — cùng thiết kế với {@link CaseEstablishment}: 1-1 với
+ * {@code PMDV_CASE} qua {@code case_id} (unique, KHÔNG phải PK của bảng này) — tra cứu theo hồ sơ
+ * phải dùng {@code findByCaseId(...)}, KHÔNG dùng {@code findById}.
  * Bảng vệ tinh dùng CHUNG cho Bước 1 (SC-08) của 5 nghiệp vụ biến động tổ chức đảng
  * (Giải thể/Sáp nhập/Hợp nhất/Chia tách/Đổi tên) — quan hệ 1-1 với PMDV_CASE qua cột
  * {@code case_id} (unique, KHÔNG phải PK — PK là {@code id} UUID riêng kế thừa từ
@@ -65,4 +69,14 @@ public class CaseChange extends BaseEntity<String> {
     @Column(name = "affected_committee_member_count")
     @Comment("Field 6 SC-08 — SNAPSHOT tổng số cấp ủy viên của các TCĐ liên quan, tương tự affected_member_count")
     Integer affectedCommitteeMemberCount;
+
+    @Override
+    protected void onCreate() {
+        super.onCreate();
+    }
+
+    @Override
+    protected void onUpdate() {
+        super.onUpdate();
+    }
 }
