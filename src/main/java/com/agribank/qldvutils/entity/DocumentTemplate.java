@@ -2,9 +2,7 @@ package com.agribank.qldvutils.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.Lob;
 import jakarta.persistence.Table;
-import jakarta.persistence.UniqueConstraint;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -69,10 +67,10 @@ public class DocumentTemplate extends BaseEntity<String> {
     @Comment("DRAFT / PENDING_REVIEW / ACTIVE / INACTIVE")
     String status;
 
-    @Lob
-    @Column(name = "field_mapping_config", nullable = false)
-    @Comment("JSON schema v2: {fields: [{placeholder, resolution_type, field_path|resolver_id+resolver_params}], repeat_blocks: []}")
-    String fieldMappingConfig;
+    @Column(name = "generator_key", nullable = false)
+    @Comment("Định danh hàm Java sinh nội dung cho ĐÚNG file mẫu này — khớp tên bean đã đăng "
+            + "ký trong Map<String, DocumentContentProvider>")
+    String generatorKey;
 
     @Override
     protected void onCreate() {
