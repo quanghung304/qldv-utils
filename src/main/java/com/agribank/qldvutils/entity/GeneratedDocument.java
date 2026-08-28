@@ -21,8 +21,8 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Entity
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Table(name = "PMDV_DOCUMENT")
-public class Document extends BaseEntity<String> {
+@Table(name = "PMDV_GENERATED_DOCUMENT")
+public class GeneratedDocument extends BaseEntity<String> {
     @Column(name = "case_id")
     String caseId;
 
